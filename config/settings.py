@@ -22,6 +22,7 @@ else:
     DEBUG_PROPAGATE_EXCEPTIONS = False
 
 ALLOWED_HOSTS = [os.getenv("HOST")]
+DEFAULT_PORT = "8080"
 
 # Application definition
 INSTALLED_APPS = [
