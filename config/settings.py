@@ -1,6 +1,8 @@
 from pathlib import Path
 import os
+import sentry_sdk
 from dotenv import load_dotenv
+from sentry_sdk.integrations.django import DjangoIntegration
 
 # Environment variables
 load_dotenv()
@@ -9,7 +11,7 @@ load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-xc*z)1qgrpwx7+)s%g-#^6ay6(*6_hi7i6-)x@a*_oj2+&rm%p'
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 if os.getenv("ENV") == 'dev':
@@ -21,9 +23,7 @@ else:
 
 ALLOWED_HOSTS = [os.getenv("HOST")]
 
-
 # Application definition
-
 INSTALLED_APPS = [
     'apps.home',
     'django.contrib.admin',
@@ -114,6 +114,15 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+
+if os.getenv("ENV") == "prod":
+    # Sentry
+    sentry_sdk.init(
+    dsn="https://0b74ff2d74614c48946109cc17e75d66@o523221.ingest.sentry.io/5635710",
+    integrations=[DjangoIntegration()],
+    traces_sample_rate=1.0,
+    send_default_pii=True,
+    )
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
