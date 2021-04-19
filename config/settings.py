@@ -1,29 +1,22 @@
 from pathlib import Path
 import os
-import sentry_sdk
-from dotenv import load_dotenv
-from sentry_sdk.integrations.django import DjangoIntegration
+import django_heroku
 
-# Environment variables
-load_dotenv()
+django_heroku.settings(locals())
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv("SECRET_KEY")
 
-# SECURITY WARNING: don't run with debug turned on in production!
-if os.getenv("ENV") == 'dev':
-    DEBUG = True
-    DEBUG_PROPAGATE_EXCEPTIONS = True
-else:
+if os.getenv("ENV") == 'prod':
     DEBUG = False
     DEBUG_PROPAGATE_EXCEPTIONS = False
+else:
+    DEBUG = True
+    DEBUG_PROPAGATE_EXCEPTIONS = True
 
-ALLOWED_HOSTS = [os.getenv("HOST")]
+ALLOWED_HOSTS = [".herokuapp.com", "localhost", "127.0.0.1"]
 
-# Application definition
 INSTALLED_APPS = [
     'apps.home',
     'django.contrib.admin',
@@ -64,20 +57,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
-
-# Password validation
-# https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -94,13 +79,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+LANGUAGE_CODE = 'fr-fr'
 
-# Internationalization
-# https://docs.djangoproject.com/en/3.2/topics/i18n/
-
-LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'UTC+2'
 
 USE_I18N = True
 
@@ -108,23 +89,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.2/howto/static-files/
-
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-
-if os.getenv("ENV") == "prod":
-    # Sentry
-    sentry_sdk.init(
-    dsn="https://0b74ff2d74614c48946109cc17e75d66@o523221.ingest.sentry.io/5635710",
-    integrations=[DjangoIntegration()],
-    traces_sample_rate=1.0,
-    send_default_pii=True,
-    )
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
