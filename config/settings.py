@@ -3,6 +3,7 @@ import os
 import sentry_sdk
 from dotenv import load_dotenv
 from sentry_sdk.integrations.django import DjangoIntegration
+from django.core.management.commands.runserver import Command as runserver
 
 # Environment variables
 load_dotenv()
@@ -22,7 +23,8 @@ else:
     DEBUG_PROPAGATE_EXCEPTIONS = False
 
 ALLOWED_HOSTS = [os.getenv("HOST")]
-DEFAULT_PORT = "8080"
+
+runserver.default_port = "8080"
 
 # Application definition
 INSTALLED_APPS = [
