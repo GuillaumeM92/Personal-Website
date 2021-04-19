@@ -6,19 +6,11 @@ from dotenv import load_dotenv
 # Environment variables
 load_dotenv()
 
-# Heroku config
-django_heroku.settings(locals())
-
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.getenv("SECRET_KEY")
 
-if os.getenv("ENV") == 'prod':
-    DEBUG = False
-    DEBUG_PROPAGATE_EXCEPTIONS = False
-else:
-    DEBUG = True
-    DEBUG_PROPAGATE_EXCEPTIONS = True
+DEBUG = False if os.getenv("ENV", "development") == "prod" else True
 
 ALLOWED_HOSTS = [".herokuapp.com", "localhost", "127.0.0.1"]
 
@@ -98,3 +90,6 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Heroku config
+django_heroku.settings(locals())
