@@ -1,1 +1,1 @@
-web: gunicorn --bind :8001 config.wsgi --log-file
+web: gunicorn --bind :8888 config.wsgi --log-file
