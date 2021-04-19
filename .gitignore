@@ -1,2 +1,5 @@
 *venv*
 *doc*
+db.sqlite3
+apps/home/static/*
+*static*

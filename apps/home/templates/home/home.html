@@ -1,0 +1,113 @@
+{% extends "home/base.html" %}
+{% load static %}
+{% block content %}
+<!-- Page Header-->
+<section class="bg-light py-10">
+    <div class="container animated--fade-in" style="padding-left: 2rem; padding-right: 2rem;">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="text-center mb-5 border-bottom">
+                    <h2>Mes Projets</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row text-center">
+        {% comment %} <div class="row"> {% endcomment %}
+            <div class="col-md-6 col-xl-4 mb-5">
+                <a class="card post-preview lift h-100 card-portfolio" href="https://purbeurreweb.herokuapp.com/">
+                <img class="card-img-top background-image" src="{% static 'home/assets/img/preview/calendar_preview.png' %}" />
+                    <div class="card-body" style="background-color: #54463B;">
+                        <p class="card-title" style=" font-size: 80%">
+                            Sur ce site internet basé sur Django, l'utilisateur peut rechercher un produit alimentaire, et trouver des substituts présentant un meilleur nutriscore.<br>
+                            <br>Si l'utilisateur s'est créé un compte il peut également ajouter les produits qui l'intéressent à ses favoris.
+                        </p>
+                    </div>
+                    <div class="card-body-activities">
+                        <h5 class="card-title">Pur Beurre Web</h5>
+                        <p class="card-text-2 mt-4">Python, Django, JavaScript</p>
+                        <p class="card-text-2 mt-4">PostgreSQL, Heroku...</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-6 col-xl-4 mb-5">
+                <a class="card post-preview lift h-100 card-portfolio" href="https://labouygue.com/home/">
+                <img class="card-img-top background-image" src="{% static 'home/assets/img/preview/blog_preview.png' %}" />
+                    <div class="card-body" style="background-color: #717E8C;">
+                        <p class="card-title" style=" font-size: 80%">
+                            L'objectif principal de ce site internet est de permettre aux membres de ma famille de réserver leur séjour dans une maison de vacances familiale.<br>
+                            <br>D'autres fonctionnalités ont été développées, telles qu'un forum de discussion, une page de gestion des Travaux et du Budget, ou encore une page dédiée à l'Administration.
+                        </p>
+                    </div>
+                    <div class="card-body-activities">
+                        <h5 class="card-title">La Bouygue</h5>
+                        <p class="card-text-2 mt-4">Python, Django, JavaScript</p>
+                        <p class="card-text-2 mt-4">PostgreSQL, Nginx</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-6 col-xl-4 mb-5">
+                <a class="card post-preview lift h-100 card-portfolio" href="https://grandpyweb.herokuapp.com/">
+                <img class="card-img-top background-image" src="{% static 'home/assets/img/preview/activities_preview.png' %}" />
+                    <div class="card-body" style="background-color: #323237;">
+                        <p class="card-title" style=" font-size: 80%">
+                            Mon premier site internet. Développé avec Flask, il propose à l'utilisateur de demander une adresse en France à Grandpy.<br>
+                            <br>Celui-ci analyse alors les mots clés de la requête, nous trouve l'adresse demandée, et nous affiche un plan Google Maps correspondant.<br>
+                            <br>De plus, il nous sort une petite anecdote tirée de l'API Wikipedia, en lien avec l'adresse demandée.
+                        </p>
+                    </div>
+                    <div class="card-body-activities">
+                        <h5 class="card-title">Grandpy</h5>
+                        <p class="card-text-2 mt-4">Python, Flask</p>
+                        <p class="card-text-2 mt-4">JavaScript, Jquery, Ajax...</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-6 col-xl-4 mb-5">
+                <a class="card post-preview lift h-100 card-portfolio" href="https://github.com/GuillaumeM92/MacGyver-Game">
+                <img class="card-img-top background-image" src="{% static 'home/assets/img/preview/info_preview.png' %}" />
+                    <div class="card-body" style="background-color: #3D3F36;">
+                        <p class="card-title" style=" font-size: 80%">
+                            Mon premier projet Python, ce petit jeu à un seul niveau fut développé à l'aide de pygame.<br>
+                            <br>Le but du jeu est d'arriver jusqu'à la sortie du labyrinthe en ramassant tous les objets nécessaires, afin d'éviter aux pièges.
+                        </p>
+                    </div>
+                    <div class="card-body-activities">
+                        <h5 class="card-title">Mac Gyver</h5>
+                        <p class="card-text-2 mt-4">Python, Pygame</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-6 col-xl-4 mb-5">
+                <a class="card post-preview lift h-100 card-portfolio" href="https://www.youtube.com/watch?v=uRdu2criev8">
+                <img class="card-img-top background-image" src="{% static 'home/assets/img/preview/space_defender.jpg' %}" />
+                    <div class="card-body" style="background-color: #02173D;">
+                        <p class="card-title" style=" font-size: 80%">
+                            Mon premier projet avec unity et C#. Dans ce shooter spatial vu du dessus, le but du jeu est de résister le plus longtemps possible aux vagues d'ennemis et d'astéroide qui assaillissent le joueur.<br>
+                            <br>Le joueur possède 100 points de vie et doit tenter de marquer le meilleur score possible.
+                        </p>
+                    </div>
+                    <div class="card-body-activities">
+                        <h5 class="card-title">Space Defender</h5>
+                        <p class="card-text-2 mt-4">C#, Unity</p>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="svg-border-rounded text-white">
+        <!-- Rounded SVG Border--><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="#f2f6fc"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
+    </div>
+</section>
+
+<section class="bg-light py-10">
+    <div class="svg-border-rounded text-light">
+        <!-- Rounded SVG Border--><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="#1e2c41"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
+    </div>
+</section>
+{% endblock content %}
