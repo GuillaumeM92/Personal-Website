@@ -6,5 +6,8 @@ def about(request):
 def portfolio(request):
     return render(request, 'home/portfolio.html')
 
-# def resume(request):
-#     return render(request, 'home/resume.html')
+def about_en(request):
+    return render(request, 'home/about_en.html')
+
+def portfolio_en(request):
+    return render(request, 'home/portfolio_en.html')

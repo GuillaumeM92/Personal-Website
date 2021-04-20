@@ -1,0 +1,156 @@
+{% extends "home/base_en.html" %}
+{% load static %}
+{% block content %}
+<!-- Page Header-->
+<header class="page-header page-header-light bg-white">
+    <div class="page-header-content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-8 col-lg-10 text-center">
+                    <img class="mb-4 rounded-circle" src="{% static 'home/assets/img/profile_pic_large.png' %}" style="width: 18rem;" />
+                    <h1 class="page-header-title">Welcome to my Website!</h1>
+                    <p class="page-header-text">I am a Python Developer who studied at <a href="https://openclassrooms.com/en/paths/206-python-developer" class="text-orange">Openclassrooms.</a><br>
+                    This website will allow you to learn more about myself, view my <a href="{% url 'portfolio-en' %}" class="text-orange">Portfolio</a>, and download <a href="https://drive.google.com/u/0/uc?id=1gFXBfwBuzq4GjS6LRsBFUhA4hHKSChAa&export=download" class="text-orange">my Resume</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="svg-border-rounded text-light">
+        <!-- Rounded SVG Border--><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
+    </div>
+</header>
+<section class="bg-light py-10">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <div class="icon-stack icon-stack-xl bg-blue text-white mb-4"><i class="fab fa-python"></i></div>
+                <h3>Python</h3>
+                <p class="mb-0">My favorite language</p>
+            </div>
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <div class="icon-stack icon-stack-xl bg-green text-white mb-4"><img src="{% static 'home/assets/img/django-icon.png' %}" style="height: 50px;"></img></div>
+                <h3>Django</h3>
+                <p class="mb-0">My framework of choice</p>
+            </div>
+            <div class="col-lg-4">
+                <div class="icon-stack icon-stack-xl bg-yellow text-white mb-4"><i class="fab fa-js-square"></i></div>
+                <h3>JavaScript</h3>
+                <p class="mb-0">A precious tool for my web projects</p>
+            </div>
+        </div>
+    </div>
+    <div class="svg-border-rounded text-white">
+        <!-- Rounded SVG Border--><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
+    </div>
+</section>
+<section class="bg-white py-10">
+    <div class="container">
+        <div class="text-uppercase-expanded small mb-2">Experience</div>
+        <hr class="mt-0 mb-5" />
+        <div class="row mb-5">
+            <div class="col-lg-8">
+                <h4 class="mb-0">Developer</h4>
+                <p class="lead">Openclassrooms</p>
+                <p>Although I don't have a meaningful professional experience yet, I have completed several projects which, I hope, can testify about my skills. I invite you to consult them on my <a href="{% url 'portfolio-en' %}" class="text-orange">Portfolio page.</a></p>
+            </div>
+            <div class="col-lg-4 text-lg-right"><div class="text-gray-400 small">October 2019 - Today</div></div>
+        </div>
+    </div>
+    <div class="svg-border-angled text-light">
+        <!-- Angled SVG Border--><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" fill="currentColor"><polygon points="0,100 100,0 100,100"></polygon></svg>
+    </div>
+</section>
+<section class="bg-light py-10">
+    <div class="container">
+        <div class="text-uppercase-expanded small mb-2">Education</div>
+        <hr class="mt-0 mb-5" />
+        <div class="row mb-5">
+            <div class="col-lg-8">
+                <h4 class="mb-0">Python Developer</h4>
+                <p class="lead">Openclassrooms - Remote</p>
+                <p>Remote course which took a year and a half to complete - Bachelor's-level diploma.<br><a  href="https://openclassrooms.com/en/paths/206-python-developer" class="text-orange ">See course's details.</a></p>
+            </div>
+            <div class="col-lg-4 text-lg-right"><div class="text-gray-400 small">October 2019 - April 2021</div></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8">
+                <h4 class="mb-0">Landscaping Degree</h4>
+                <p class="lead">École du Breuil - Paris</p>
+                <p>2 years course + apprenticeship in Paris.</p>
+            </div>
+            <div class="col-lg-4 text-lg-right"><div class="text-gray-400 small">September 2015 - June 2017</div></div>
+        </div>
+    </div>
+    <div class="svg-border-angled text-white">
+        <!-- Angled SVG Border--><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" fill="currentColor"><polygon points="0,100 100,0 100,100"></polygon></svg>
+    </div>
+</section>
+<section class="bg-white py-10">
+    <div class="container">
+        <div class="text-uppercase-expanded small mb-2">Skills</div>
+        <hr class="mt-0 mb-5" />
+        <div class="row">
+            <div class="col-lg-8">
+                <p><i>Naturally curious, I love discovering new topics and challenging myself on a daily basis.<br>I like teamwork, but I'm capable of working autonomously when necessary.<br>I am a fast learner and can quickly adapt to new situations.</i><br>
+                <br><b>Here's the list of skills I have learned so far:</b></p>
+                <ul class="mb-0 text-gray-700">
+                    <li><b>Languages :</b> Python, JavaScript, HTML, CSS, Git, MySQL, C#, Bash</li>
+                    <li><b>Frameworks :</b> Django, Flask, VueJS, REST</li>
+                    <li><b>Methods :</b> Agile, UML, TDD, PEP8</li>
+                    <li><b>Testing :</b> TDD, unittest, pytest, selenium, CI (Travis)</li>
+                    <li><b>DevOps :</b> Nginx, Sentry, Cron...</li>
+                    <li><b>Tools :</b> VScode, Windows, Linux</li>
+                    <li><b>Tongues :</b> French (native), English (expert), Spansih (notions)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="svg-border-angled text-light">
+        <!-- Angled SVG Border--><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" fill="currentColor"><polygon points="0,100 100,0 100,100"></polygon></svg>
+    </div>
+</section>
+<section class="bg-light py-10">
+    <div class="container">
+        <div class="text-uppercase-expanded small mb-2">Interests</div>
+        <hr class="mt-0 mb-5" />
+        <div class="row">
+            <div class="col-lg-8">
+                <p>Being curious, I have many hobbies, among which:</p>
+                <ul class="mb-0 text-gray-700">
+                    <li>IT and New Technologies</li>
+                    <li>History and Culture</li>
+                    <li>Sports (Tennis, Running, Trekking...)</li>
+                    <li>Music (Piano)</li>
+                    <li>Travels and Discoveries</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="svg-border-angled text-white">
+        <!-- Angled SVG Border--><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" fill="currentColor"><polygon points="0,100 100,0 100,100"></polygon></svg>
+    </div>
+</section>
+<section class="bg-white py-10">
+    <div class="container">
+        <div class="text-uppercase-expanded small mb-2">Contact</div>
+        <hr class="mt-0 mb-5" />
+        <div class="row">
+            <div class="col-lg-8 mb-4 mb-lg-0">
+                <h3>Guillaume Merle</h3>
+                <p class="lead mb-0">+33 06.80.98.46.08</p>
+                <a href="mailto:gemacx@gmail.com">gemacx@gmail.com</a>
+            </div>
+            <div class="col-lg-4 text-lg-right">
+                <a class="btn btn-teal btn-lg font-weight-500" href="https://drive.google.com/u/0/uc?id=1gFXBfwBuzq4GjS6LRsBFUhA4hHKSChAa&export=download"><i class="fas fa-file-pdf text-white-75 mr-2"></i>Download Resume</a>
+            </div>
+        </div>
+    </div>
+    <div class="svg-border-angled text-dark">
+        <!-- Angled SVG Border-->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" fill="#29394F">
+            <polygon points="0,100 100,0 100,100"></polygon>
+        </svg>
+    </div>
+</section>
+
+{% endblock content %}
