@@ -63,3 +63,11 @@
     $(window).scroll(navbarCollapse);
 
 })(jQuery);
+
+$(window).width(function () {
+    if ($(this).width() < 1024) {
+        $('.card-body').hide();
+    } else {
+        $('.card-body').show();
+    }
+});
