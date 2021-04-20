@@ -10,7 +10,7 @@
                     <img class="mb-4 rounded-circle" src="{% static 'home/assets/img/profile_pic_large.png' %}" style="width: 18rem;" />
                     <h1 class="page-header-title">Bienvenue sur mon Site !</h1>
                     <p class="page-header-text">Je suis un développeur Python formé chez <a href="https://openclassrooms.com/fr/paths/322-developpeur-dapplication-python" class="text-orange">Openclassrooms.</a><br>
-                    Ce site vous permettra d'en apprendre plus à mon sujet, de consulter mes <a href="{% url 'portfolio' %}" class="text-orange">Projets réalisés</a>, et de télécharger <a href="#" class="text-orange">mon CV</a>.</p>
+                    Ce site vous permettra d'en apprendre plus à mon sujet, de consulter mes <a href="{% url 'portfolio' %}" class="text-orange">Projets réalisés</a>, et de télécharger <a href="https://drive.google.com/u/0/uc?id=1gFXBfwBuzq4GjS6LRsBFUhA4hHKSChAa&export=download" class="text-orange">mon CV</a>.</p>
                 </div>
             </div>
         </div>
@@ -23,19 +23,19 @@
     <div class="container">
         <div class="row text-center">
             <div class="col-lg-4 mb-5 mb-lg-0">
-                <div class="icon-stack icon-stack-xl bg-red text-white mb-4"><i data-feather="edit-3"></i></div>
-                <h3>Illustration</h3>
-                <p class="mb-0">I provide custom illustration services for contract clients</p>
+                <div class="icon-stack icon-stack-xl bg-blue text-white mb-4"><i class="fab fa-python"></i></div>
+                <h3>Python</h3>
+                <p class="mb-0">Mon langage de prédilection</p>
             </div>
             <div class="col-lg-4 mb-5 mb-lg-0">
-                <div class="icon-stack icon-stack-xl bg-yellow text-white mb-4"><i data-feather="layout"></i></div>
-                <h3>UI Design</h3>
-                <p class="mb-0">User experience and interface designs is one of my specialties</p>
+                <div class="icon-stack icon-stack-xl bg-green text-white mb-4"><img src="{% static 'home/assets/img/django-icon.png' %}" style="height: 50px;"></img></div>
+                <h3>Django</h3>
+                <p class="mb-0">Le framework que je maitrise le mieux</p>
             </div>
             <div class="col-lg-4">
-                <div class="icon-stack icon-stack-xl bg-blue text-white mb-4"><i data-feather="droplet"></i></div>
-                <h3>Graphic Design</h3>
-                <p class="mb-0">Photo restoration, post processing, and other photo services</p>
+                <div class="icon-stack icon-stack-xl bg-yellow text-white mb-4"><i class="fab fa-js-square"></i></div>
+                <h3>JavaScript</h3>
+                <p class="mb-0">Un outil précieux dans mes projets Web</p>
             </div>
         </div>
     </div>
@@ -49,27 +49,11 @@
         <hr class="mt-0 mb-5" />
         <div class="row mb-5">
             <div class="col-lg-8">
-                <h4 class="mb-0">Senior Sales Analyst</h4>
-                <p class="lead">Intelitec Solutions</p>
-                <p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.</p>
+                <h4 class="mb-0">Apprenti développeur</h4>
+                <p class="lead">Openclassrooms</p>
+                <p>Bien que n'ayant pas encore eu d'expérience professionnelle, j'ai réalisé un certain nombre de projets qui, je l'espère, témoigneront de mes compétences. Je vous invite à les consulter dans la rubrique <a href="{% url 'portfolio' %}" class="text-orange">Mes Projets.</a></p>
             </div>
-            <div class="col-lg-4 text-lg-right"><div class="text-gray-400 small">May 2018 - Present</div></div>
-        </div>
-        <div class="row mb-5">
-            <div class="col-lg-8">
-                <h4 class="mb-0">Marketing Analyst</h4>
-                <p class="lead">Shout Media Productions</p>
-                <p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
-            </div>
-            <div class="col-lg-4 text-lg-right"><div class="text-gray-400 small">August 2015 - May 2018</div></div>
-        </div>
-        <div class="row">
-            <div class="col-lg-8">
-                <h4 class="mb-0">Sales Representative</h4>
-                <p class="lead">Gamby Enterprises</p>
-                <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.</p>
-            </div>
-            <div class="col-lg-4 text-lg-right"><div class="text-gray-400 small">June 2011 - August 2015</div></div>
+            <div class="col-lg-4 text-lg-right"><div class="text-gray-400 small">Octobre 2019 - Aujourd'hui</div></div>
         </div>
     </div>
     <div class="svg-border-angled text-light">
@@ -78,23 +62,23 @@
 </section>
 <section class="bg-light py-10">
     <div class="container">
-        <div class="text-uppercase-expanded small mb-2">Education</div>
+        <div class="text-uppercase-expanded small mb-2">Formation</div>
         <hr class="mt-0 mb-5" />
         <div class="row mb-5">
             <div class="col-lg-8">
-                <h4 class="mb-0">University of Colorado Boulder</h4>
-                <p class="lead">Master of Business Administration (MBA)</p>
-                <p>Graduated from University of Colorado Boulder's lockstep evening MBA program</p>
+                <h4 class="mb-0">Développeur d’application Python</h4>
+                <p class="lead">Openclassrooms - Remote</p>
+                <p>Formation à distance sur une durée d'un an et demi. Équivalent Bac+3/4.<br><a  href="https://openclassrooms.com/fr/paths/322-developpeur-dapplication-python" class="text-orange ">Voir le détail de la formation.</a></p>
             </div>
-            <div class="col-lg-4 text-lg-right"><div class="text-gray-400 small">September 2013 - May 2015</div></div>
+            <div class="col-lg-4 text-lg-right"><div class="text-gray-400 small">Octobre 2019 - Avril 2021</div></div>
         </div>
         <div class="row">
             <div class="col-lg-8">
-                <h4 class="mb-0">Clarcton University</h4>
-                <p class="lead">Bachelor of Science</p>
-                <p>Graduated with a degree in Marketing, with a specialization in product management and a minor in Finance</p>
+                <h4 class="mb-0">BTS Aménagements Paysagers</h4>
+                <p class="lead">École du Breuil - Paris</p>
+                <p>Formation de 2 ans en alternance chez un paysagiste en région parisienne.</p>
             </div>
-            <div class="col-lg-4 text-lg-right"><div class="text-gray-400 small">August 2009 - May 2013</div></div>
+            <div class="col-lg-4 text-lg-right"><div class="text-gray-400 small">Septembre 2015 - Juin 2017</div></div>
         </div>
     </div>
     <div class="svg-border-angled text-white">
@@ -103,18 +87,20 @@
 </section>
 <section class="bg-white py-10">
     <div class="container">
-        <div class="text-uppercase-expanded small mb-2">Skills</div>
+        <div class="text-uppercase-expanded small mb-2">Compétences</div>
         <hr class="mt-0 mb-5" />
         <div class="row">
             <div class="col-lg-8">
-                <p>Attention to detail and a general sense of product viability are my specialties. I am motivated to provide value in a team environment, and I am committed to creating the best possible experience for customers.</p>
+                <p><i>Dôté d'un grande curiosité, j'aime découvrir de nouvelles choses et me mettre à l'épreuve quotidiennement. Si j'aime travailler en équipe, le travail en autonomie ne me fait pas peur. Je suis capable d'apprendre rapidement et de m’adapter aux situations nouvelles.</i><br>
+                <br><b>Voici la liste des compétences apprises jusqu'ici :</b></p>
                 <ul class="mb-0 text-gray-700">
-                    <li>Market analysis</li>
-                    <li>Supply chain management</li>
-                    <li>Business plan preparation</li>
-                    <li>Technological entrepreneurship</li>
-                    <li>Report generation</li>
-                    <li>Presentation creation</li>
+                    <li><b>Langages :</b> Python, JavaScript, HTML, CSS, Git, MySQL, C#, Bash</li>
+                    <li><b>Frameworks :</b> Django, Flask, VueJS, REST</li>
+                    <li><b>Méthodes :</b> Agile, UML, TDD, PEP8</li>
+                    <li><b>Testing :</b> TDD, unittest, pytest, selenium, CI (Travis)</li>
+                    <li><b>DevOps :</b> Nginx, Sentry, Cron...</li>
+                    <li><b>Outils :</b> VScode, Windows, Linux</li>
+                    <li><b>Langues :</b> Anglais (bilingue), Espagnol (élémentaire)</li>
                 </ul>
             </div>
         </div>
@@ -125,12 +111,18 @@
 </section>
 <section class="bg-light py-10">
     <div class="container">
-        <div class="text-uppercase-expanded small mb-2">Interests</div>
+        <div class="text-uppercase-expanded small mb-2">Centres d'intérêt</div>
         <hr class="mt-0 mb-5" />
         <div class="row">
             <div class="col-lg-8">
-                <p>Apart from being a marketing analyst, I enjoy most of my time being outdoors. In the winter, I am an avid skier and novice ice climber. During the warmer months here in Colorado, I enjoy mountain biking, free climbing, and kayaking.</p>
-                <p>When forced indoors, I follow a number of sci-fi and fantasy genre movies and television shows, I am an aspiring chef, and I spend a large amount of my free time exploring the latest technology advancements in the marketing management world.</p>
+                <p>Ma curiosité naturelle me pousse à avoir de nombreux centres d'intérêt. Parmi eux :</p>
+                <ul class="mb-0 text-gray-700">
+                    <li>Informatique et Nouvelles Technologies</li>
+                    <li>Histoire et Patrimoine</li>
+                    <li>Sports (Tennis, Course à pied, Randonnées...)</li>
+                    <li>Musique (Piano)</li>
+                    <li>Voyages et Découvertes</li>
+                </ul>
             </div>
         </div>
     </div>
@@ -140,16 +132,16 @@
 </section>
 <section class="bg-white py-10">
     <div class="container">
-        <div class="text-uppercase-expanded small mb-2">Contact</div>
+        <div class="text-uppercase-expanded small mb-2">Me Contacter</div>
         <hr class="mt-0 mb-5" />
         <div class="row">
             <div class="col-lg-8 mb-4 mb-lg-0">
-                <h3>Chris Kelly</h3>
-                <p class="lead mb-0">(555) 392-0323</p>
-                <a href="#!">ckelly@example.com</a>
+                <h3>Guillaume Merle</h3>
+                <p class="lead mb-0">+33 06.80.98.46.08</p>
+                <a href="mailto:gemacx@gmail.com">gemacx@gmail.com</a>
             </div>
             <div class="col-lg-4 text-lg-right">
-                <a class="btn btn-teal btn-lg font-weight-500" href="#!"><i class="fas fa-file-pdf text-white-75 mr-2"></i>Download Resume</a>
+                <a class="btn btn-teal btn-lg font-weight-500" href="https://drive.google.com/u/0/uc?id=1gFXBfwBuzq4GjS6LRsBFUhA4hHKSChAa&export=download"><i class="fas fa-file-pdf text-white-75 mr-2"></i>Télécharger le CV</a>
             </div>
         </div>
     </div>
