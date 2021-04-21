@@ -66,8 +66,8 @@
 
 $(window).width(function () {
     if ($(this).width() < 1024) {
-        $('.card-body').hide();
+        $('.hide-text').hide();
     } else {
-        $('.card-body').show();
+        $('.hide-text').show();
     }
 });
