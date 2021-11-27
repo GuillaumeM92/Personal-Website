@@ -64,10 +64,16 @@
 
 })(jQuery);
 
-$(window).width(function () {
-    if ($(this).width() < 1024) {
-        $('.hide-text').hide();
-    } else {
-        $('.hide-text').show();
-    }
-});
+// Remove portfolio text card animation if width < 1000px
+function handleWindowResize() {
+    console.log("qsd");
+    $(window).width(function () {
+        if ($(this).width() < 1000) {
+            $('.hide-text').hide();
+        } else {
+            $('.hide-text').show();
+        }
+    });
+}
+
+window.addEventListener('resize', handleWindowResize);
