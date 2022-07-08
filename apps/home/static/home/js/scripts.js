@@ -77,3 +77,4 @@ function handleWindowResize() {
 }
 
 window.addEventListener('resize', handleWindowResize);
+window.addEventListener('load', handleWindowResize);
