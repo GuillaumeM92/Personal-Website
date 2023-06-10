@@ -9,9 +9,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.getenv("SECRET_KEY")
 
-DEBUG = False if os.getenv("ENV") == "prod" else True
+DEBUG = False
+ALLOWED_HOSTS = [os.getenv("HOST")]
 
-ALLOWED_HOSTS = [".guillaume-merle.fr"] if os.getenv("ENV") == "prod" else ["localhost", "127.0.0.1", '0.0.0.0']
+if os.getenv("ENV") == 'dev':
+    DEBUG = True
+    ALLOWED_HOSTS = ["localhost", "127.0.0.1", '0.0.0.0']
 
 INSTALLED_APPS = [
     'apps.home',
