@@ -11,7 +11,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 
 DEBUG = False if os.getenv("ENV", "development") == "prod" else True
 
-ALLOWED_HOSTS = [os.getenv("HOST")]
+ALLOWED_HOSTS = [".guillaume-merle.fr"]
 
 INSTALLED_APPS = [
     'apps.home',
