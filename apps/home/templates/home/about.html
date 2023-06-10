@@ -8,9 +8,12 @@
             <div class="row justify-content-center">
                 <div class="col-xl-8 col-lg-10 text-center">
                     <img class="mb-4 rounded-circle" src="{% static 'home/assets/img/profile_pic_large.png' %}" style="width: 18rem;" />
-                    <h1 class="page-header-title">Bienvenue sur mon Site !</h1>
-                    <p class="page-header-text">Je suis un développeur Python formé chez <a href="https://openclassrooms.com/fr/paths/322-developpeur-dapplication-python" class="text-orange">Openclassrooms.</a><br>
-                    Ce site vous permettra d'en apprendre plus à mon sujet, de consulter mes <a href="{% url 'portfolio' %}" class="text-orange">Projets réalisés</a>, et de télécharger <a href="https://drive.google.com/file/d/1TlhOY6FazRYP60lpPx_AA6t-f0dLT88i/view?usp=sharing" class="text-orange">mon CV</a>.</p>
+                    <h1 class="page-header-title">Bienvenue sur mon site !</h1>
+                    <div class="page-header-text mt-4">
+                        <p class="mt-3">Développeur spécialisé dans l'utilisation de <b>Python</b> et du framework <b>Django</b>, j'ai <b>2 ans d'expérience</b> professionnelle en tant que développeur <b>full-stack</b> d'applications <b>web</b>.</p>
+                        <p class="mt-3">Très <b>curieux</b>, j'ai soif d'apprendre et de me mettre à l'épreuve. Je suis capable de travailler de façon <b>autonome</b>, mais j'aime également <b>partager</b> des connaissances lorsque l'occasion se présente.</p>
+                        <p class="mt-3">Sur ce site, vous pourrez en apprendre davantage sur mes compétences, consulter mes <a href="{% url 'portfolio' %}" class="text-orange">projets personnels réalisés</a> et télécharger <a href="https://drive.google.com/file/d/1TlhOY6FazRYP60lpPx_AA6t-f0dLT88i/view?usp=sharing" class="text-orange">mon CV</a></p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -49,11 +52,43 @@
         <hr class="mt-0 mb-5" />
         <div class="row mb-5">
             <div class="col-lg-8">
-                <h4 class="mb-0">Développeur Junior</h4>
-                <p class="lead">Openclassrooms</p>
-                <p>Bien que n'ayant pas encore eu d'expérience professionnelle, j'ai réalisé un certain nombre de projets qui, je l'espère, témoigneront de mes compétences. Je vous invite à les consulter dans la rubrique <a href="{% url 'portfolio' %}" class="text-orange">Mes Projets.</a></p>
+                <h4 class="mb-0">Développeur Python / Django</h4>
+                <p class="lead">Zentux - Lencloître</p>
+                <p>Au cours de mes 2 ans chez Zentux, j'ai développé des compétences solides et acquis une précieuse expérience.</p>
+                <p>Parmi les projets réalisés, je retiens en particulier :</p>
+                <ul>
+                    <div class="mt-2"><b><a href="https://www.azurdrones.com/fr/" class="text-orange">Azur Drones</a> (Client)</b>
+                        <ul>
+                            <li class="mt-2"><b>Projet :</b> Création d'une interface cartographique pour la surveillance industrielle par drones. </li>
+                            <li class="mt-2"><b>Technologies utilisées:</b> Python, Django, DRF, Leaflet, Docker, GeoDjango, PostGIS, Websockets, AJAX. </li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-2"><b><a href="https://omnicite.fr/" class="text-orange">Omnicité</a> (Client)</b>
+                        <ul>
+                            <li class="mt-2"><b>Projet :</b> Maintenance et développement d'une plateforme de devis et de facturation pour les entrepreneurs et l'équipe de gestion. </li>
+                            <li class="mt-2"><b>Technologies utilisées :</b> Python, Django, MySQL, Docker, Postman. Communication avec le front-end Vue.js via une API REST. </li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-2"><b><a href="https://www.groupefindis.fr/" class="text-orange">Findis</a> (Client)</b>
+                        <ul>
+                            <li class="mt-2"><b>Projet :</b> Implémentation d'un traducteur open source permettant la transmission de commandes/factures dans le respect de la norme EDI. </li>
+                            <li class="mt-2"><b>Technologies utilisées :</b> Python, Django, MariaDB, Docker, Docker Compose, EDI (edifact), PyAS2. </li>
+                        </ul>
+                    </div>
+
+                </ul>
+
+                <p class="mt-4">J'ai également maîtrisé différentes <b>méthodes de travail</b> au fil des projets, notamment :</p>
+                <ul>
+                    <li>Git, GitFlow, intégration continue (CI/CD) et tests.</li>
+                    <li>Prise de notes, documentation et échanges avec les clients.</li>
+                    <li>Prise de décisions techniques, affinements et estimations.</li>
+                    <li>Utilisation de méthodes agiles, Kanban et livraison continue.</li>
+                </ul>
             </div>
-            <div class="col-lg-4 text-lg-right"><div class="text-gray-400 small">Octobre 2019 - Aujourd'hui</div></div>
+            <div class="col-lg-4 text-lg-right"><div class="text-gray-400 small">Septembre 2021 - Septembre 2023</div></div>
         </div>
     </div>
     <div class="svg-border-angled text-light">
@@ -66,20 +101,13 @@
         <hr class="mt-0 mb-5" />
         <div class="row mb-5">
             <div class="col-lg-8">
-                <h4 class="mb-0">Développeur d’application Python</h4>
+                <h4 class="mb-0">Développeur d’application - Python</h4>
                 <p class="lead">Openclassrooms - Remote</p>
-                <p>Formation à distance sur une durée d'un an et demi. Équivalent Bac+3/4.<br><a  href="https://openclassrooms.com/fr/paths/322-developpeur-dapplication-python" class="text-orange ">Voir le détail de la formation.</a></p>
+                <p>Dans le cadre d'une reconversion, j'ai suivi cette formation à distance sur une durée d'un an et demi - équivalence Bac+3/4. De nombreux projets concrets y ont été réalisés. Je vous invite à les consulter dans la rubrique <a href="{% url 'portfolio' %}" class="text-orange">Mes projets personnels.</a></p>
+                    <a  href="https://openclassrooms.com/fr/paths/518-developpeur-dapplication-python" class="text-orange">Consulter le détail de la formation.</a></p>
             </div>
             <div class="col-lg-4 text-lg-right"><div class="text-gray-400 small">Octobre 2019 - Avril 2021</div></div>
-        </div>
-        <div class="row">
-            <div class="col-lg-8">
-                <h4 class="mb-0">BTS Aménagements Paysagers</h4>
-                <p class="lead">École du Breuil - Paris</p>
-                <p>Formation de 2 ans en alternance chez un paysagiste en région parisienne.</p>
-            </div>
-            <div class="col-lg-4 text-lg-right"><div class="text-gray-400 small">Septembre 2015 - Juin 2017</div></div>
-        </div>
+        </div>  
     </div>
     <div class="svg-border-angled text-white">
         <!-- Angled SVG Border--><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" fill="currentColor"><polygon points="0,100 100,0 100,100"></polygon></svg>
@@ -87,20 +115,23 @@
 </section>
 <section class="bg-white py-10">
     <div class="container">
-        <div class="text-uppercase-expanded small mb-2">Compétences</div>
+        <div class="text-uppercase-expanded small mb-2">Détail des Compétences</div>
         <hr class="mt-0 mb-5" />
         <div class="row">
             <div class="col-lg-8">
-                <p><i>Dôté d'un grande curiosité, j'aime découvrir de nouvelles choses et me mettre à l'épreuve quotidiennement. Si j'aime travailler en équipe, le travail en autonomie ne me fait pas peur. Je suis capable d'apprendre rapidement et de m’adapter aux situations nouvelles.</i><br>
-                <br><b>Voici la liste des compétences apprises jusqu'ici :</b></p>
-                <ul class="mb-0 text-gray-700">
-                    <li><b>Langages :</b> Python, JavaScript, HTML, CSS, Git, MySQL, C#, Bash</li>
-                    <li><b>Frameworks :</b> Django, Flask, VueJS, Unity Game Engine, REST</li>
-                    <li><b>Méthodes :</b> Agile, UML, TDD, PEP8</li>
-                    <li><b>Testing :</b> TDD, unittest, pytest, selenium, CI (Travis)</li>
-                    <li><b>DevOps :</b> Nginx, Sentry, Cron...</li>
-                    <li><b>Outils :</b> VScode, Windows, Linux</li>
+                <p><b>Compétences acquises jusqu'à présent :</b></p>
+                <ul class="mb-4 text-gray-700">
+                    <li><b>Langages :</b> Python, JavaScript, HTML5, CSS3, SQL, Bash </li>
+                    <li><b>Frameworks :</b> Django, DRF (API REST)</li>
+                    <li><b>Méthodes :</b> Agile, UML, PEP8</li>
+                    <li><b>Tests :</b> Tests unitaires et fonctionnels (Pytest, Selenium)</li>
+                    <li><b>DevOps :</b> Nginx, Sentry, Supervisor, Cron, CI/CD</li>
+                    <li><b>Outils :</b> Git, VScode, Linux ou Windows, Postman</li>
                     <li><b>Langues :</b> Anglais (bilingue), Espagnol (élémentaire)</li>
+                </ul>
+                <p class="mt-4"><b>Autres compétences en cours d'apprentissage :</b></p>
+                <ul class="mb-0 text-gray-700">
+                    <li>Flask, VueJS, SASS, C#, Unity Game Engine</li>
                 </ul>
             </div>
         </div>
@@ -115,11 +146,10 @@
         <hr class="mt-0 mb-5" />
         <div class="row">
             <div class="col-lg-8">
-                <p>Ma curiosité naturelle me pousse à avoir de nombreux centres d'intérêt. Parmi eux :</p>
                 <ul class="mb-0 text-gray-700">
                     <li>Informatique et Nouvelles Technologies</li>
-                    <li>Histoire et Patrimoine</li>
                     <li>Sports (Tennis, Course à pied, Randonnées...)</li>
+                    <li>Histoire et Patrimoine</li>
                     <li>Musique (Piano)</li>
                     <li>Voyages et Découvertes</li>
                 </ul>
