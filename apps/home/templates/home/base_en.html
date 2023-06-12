@@ -17,6 +17,7 @@
         <link rel="icon" type="image/x-icon" href="{% static 'home/assets/img/favicon.png' %}" />
         <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.24.1/feather.min.js" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/ba0004ebe8.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <div id="layoutDefault">
@@ -24,59 +25,21 @@
                 <!-- Navbar-->
                 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #29394F; padding: 0.85rem; opacity: 95%">
                     <div class="container">
-                        {% if user.is_authenticated %}
-                            <a class="navbar-brand" href="{% url 'about-en' %}">Guillaume Merle</a><button class="navbar-toggler" id="navbar-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i data-feather="menu"></i></button>
-                        {% else %}
-                            <a class="navbar-brand" href="{% url 'about-en' %}">Guillaume Merle</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i data-feather="menu"></i></button>
-                        {% endif %}
+                        <a class="navbar-brand" href="{% url 'about-en' %}">Guillaume Merle</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i data-feather="menu"></i></button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav ml-auto mr-auto">
                                 <li class="nav-item dropdown dropdown-xl no-caret" style="font-size: 107%">
-                                {% if user.is_authenticated %}
-                                    <a class="nav-link dropdown-toggle font-weight-bold" id="navbarDropdownDemos" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white">Rubriques<i class="fas fa-chevron-right dropdown-arrow"></i></a>
-                                    {% endif %}
-                                    <div class="dropdown-menu dropdown-menu-right animated--fade-in-up mr-lg-n25 mr-xl-n15 mb-3 font-weight-bold" aria-labelledby="navbarDropdownDemos">
-                                        <div class="row no-gutters">
-                                            <div class="col-lg-5 p-lg-3 bg-gray-800 d-none d-lg-block">
-                                                <div class="d-flex h-100 w-100 align-items-center justify-content-center">
-                                                    <div class="text-white text-center z-1">
-                                                        <div class="mb-3 font-weight-bold">Menu des <br> rubriques</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-7 p-lg-5">
-                                                <div class="row">
-                                                    <div class="col-lg-6 ">
-                                                        <a class="dropdown-item font-weight-bold" href="#">Calendrier</a><a class="dropdown-item font-weight-bold" href="#">Discussions</a>
-                                                        <a class="dropdown-item font-weight-bold" href="#">Activités</a><a class="dropdown-item font-weight-bold" href="#">Informations</a>
-                                                        <a class="dropdown-item font-weight-bold" href="#">Travaux</a><a class="dropdown-item font-weight-bold" href="#">Budget</a>
-                                                        {% if user.is_superuser %}
-                                                            <a class="dropdown-item font-weight-bold" href="#">Activations</a>
-                                                        {% endif %}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </li>
                             </ul>
-                            {% if user.is_authenticated %}
-                            {% if user.is_superuser %}
-                                <a class="btn btn-outline-white font-weight-500"  style="padding: 0.75rem;" href="#">Admin</a>
-                            {% elif user.is_staff %}
-                                <a class="btn btn-outline-white font-weight-500"  style="padding: 0.75rem;" href="#">Admin</a>
-                            {% endif %}
-                                <a class="btn btn-outline-white font-weight-500 ml-lg-2" style="padding: 0.75rem;" href="#" name="profile">Profil</a>
-                                <a class="btn btn-outline-white font-weight-500 ml-lg-2" id="logout-icon" style="padding: 0.75rem;" href="#">Déconnexion<i class="ml-2" data-feather="arrow-right"></i></a>
-                            {% else %}
                             <a class="btn btn-outline-white font-weight-500 ml-lg-3 mt-1 mb-1 ml-auto d-flex" style="padding: 0.75rem;" href="{% url 'about-en' %}">About me<i class="ml-2" data-feather="arrow-right"></i></a>
                             <a class="btn btn-outline-white font-weight-500 ml-lg-3 mt-1 mb-1 d-flex" style="padding: 0.75rem;" href="{% url 'portfolio-en' %}">My personal projects<i class="ml-2" data-feather="arrow-right"></i></a>
-                            <a class="btn btn-outline-white font-weight-500 ml-lg-3 mt-1 mb-1 mr-auto d-flex" style="padding: 0.75rem;" href="https://drive.google.com/u/0/uc?id=1Q3EgHtyrkgLTP22q_gTO2QjChDmC9A4i&export=download">Resume <i class="far fa-save ml-2"></i></a>
+                            <a class="btn btn-outline-white font-weight-500 ml-lg-3 mt-1 mb-1 mr-auto d-flex" style="padding: 0.75rem;" href="https://drive.google.com/u/0/uc?id=1Q3EgHtyrkgLTP22q_gTO2QjChDmC9A4i&export=download" target="_blank">Resume <i class="far fa-save ml-2"></i></a>
                             <a class="btn btn-outline-white rounded font-weight-500 mr-4" style="padding: 0.45rem;" href="{% url 'about' %}">Language:<img src="{% static 'home/assets/img/flag-icon/us.svg' %}" class="ml-2" style="width: 2rem;"></img></a>
                             <div class="icon-list-social ml-2 mt-1">
-                                <a class="icon-list-social-link" style="color: white" href="https://www.linkedin.com/in/guillaume-merle-8a239a207/"><i class="fab fa-linkedin"></i></a><a class="icon-list-social-link" style="color: white" href="https://github.com/GuillaumeM92?tab=repositories"><i class="fab fa-github"></i></a><a class="icon-list-social-link" style="color: white" href="https://twitter.com/Guillaume010101"><i class="fab fa-twitter"></i></a>
+                                <a class="icon-list-social-link" style="color: white" href="https://www.linkedin.com/in/guillaume-merle-8a239a207/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                                <a class="icon-list-social-link" style="color: white" href="https://github.com/GuillaumeM92?tab=repositories" target="_blank"><i class="fab fa-github"></i></a>
+                                <a class="icon-list-social-link" style="color: white" href="https://twitter.com/Guillaume010101" target="_blank"><i class="fab fa-twitter"></i></a>
                             </div>
-                            {% endif %}
                         </div>
                     </div>
                 </nav>
@@ -93,11 +56,13 @@
                         <div class="col-lg-5">
                             <a class="footer-brand" href="{% url 'about-en' %}">Guillaume Merle</a>
                             <div class="icon-list-social mb-5">
-                                <a class="icon-list-social-link" href="https://www.linkedin.com/in/guillaume-merle-8a239a207/"><i class="fab fa-linkedin"></i></a><a class="icon-list-social-link" href="https://github.com/GuillaumeM92?tab=repositories"><i class="fab fa-github"></i></a><a class="icon-list-social-link" href="https://twitter.com/Guillaume010101"><i class="fab fa-twitter"></i></a>
+                                <a class="icon-list-social-link" href="https://www.linkedin.com/in/guillaume-merle-8a239a207/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                                <a class="icon-list-social-link" href="https://github.com/GuillaumeM92?tab=repositories" target="_blank"><i class="fab fa-github"></i></a>
+                                <a class="icon-list-social-link" href="https://twitter.com/Guillaume010101" target="_blank"><i class="fab fa-twitter"></i></a>
                             </div>
                         </div>
                         <div class="col-md-6 text-md-right small">
-                            <div class="mt-2 small"><i class="fas fa-phone mr-1"></i> +33 06.80.98.46.08</div>
+                            <div class="mt-2 small"><i class="fas fa-phone mr-1"></i><a href="tel:0680984608"> +33 06.80.98.46.08</a></div>
                             <a class="mt-2 small" href="mailto:gemacx@gmail.com"><i class="fas fa-envelope mr-1"></i> gemacx@gmail.com</a>
                         </div>
                         </div>

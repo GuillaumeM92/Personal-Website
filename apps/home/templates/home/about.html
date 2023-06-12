@@ -11,8 +11,8 @@
                     <h1 class="page-header-title">Bienvenue sur mon site !</h1>
                     <div class="page-header-text mt-4">
                         <p class="mt-3">Développeur spécialisé dans l'utilisation de <b>Python</b> et du framework <b>Django</b>, j'ai <b>2 ans d'expérience</b> professionnelle en tant que développeur <b>full-stack</b> d'applications <b>web</b>.</p>
-                        <p class="mt-3">Très <b>curieux</b>, j'ai soif d'apprendre et de me mettre à l'épreuve. Je suis capable de travailler de façon <b>autonome</b>, mais j'aime également <b>partager</b> des connaissances lorsque l'occasion se présente.</p>
-                        <p class="mt-3">Sur ce site, vous pourrez en apprendre davantage sur mes compétences, consulter mes <a href="{% url 'portfolio' %}" class="text-orange">projets personnels réalisés</a> et télécharger <a href="https://drive.google.com/file/d/1TlhOY6FazRYP60lpPx_AA6t-f0dLT88i/view?usp=sharing" class="text-orange">mon CV</a></p>
+                        <p class="mt-3">Très <b>curieux</b>, j'aime apprendre et me mettre à l'épreuve. Je suis capable de travailler de façon <b>autonome</b>, mais aussi de <b>communiquer</b> efficacement et de favoriser le <b>partage</b> des connaissances.</p>
+                        <p class="mt-3">Sur ce site, vous pourrez en apprendre davantage sur mes compétences, consulter mes <a href="{% url 'portfolio' %}" class="text-orange">projets personnels réalisés</a>, et télécharger <a href="https://drive.google.com/file/d/1TlhOY6FazRYP60lpPx_AA6t-f0dLT88i/view?usp=sharing" target="_blank" class="text-orange">mon CV.</a></p>
                     </div>
                 </div>
             </div>
@@ -53,38 +53,42 @@
         <div class="row mb-5">
             <div class="col-lg-8">
                 <h4 class="mb-0">Développeur Python / Django</h4>
-                <p class="lead">Zentux - Lencloître</p>
-                <p>Au cours de mes 2 ans chez Zentux, j'ai développé des compétences solides et acquis une précieuse expérience.</p>
+                <p class="lead"><a href="https://www.zentux.fr/" target="_blank" class="text-orange">Zentux</a> - Lencloître</p>
+                <p>Au cours de mes 2 ans chez <a href="https://www.zentux.fr/" target="_blank" class="text-orange">Zentux</a>, j'ai développé des compétences solides et acquis une précieuse expérience.</p>
                 <p>Parmi les projets réalisés, je retiens en particulier :</p>
+
+                <p class="text-primary mt-4 ml-3">
+                    <i class="fa-solid fa-arrow-right mr-1"></i>
+                    <b> Pour un client du domaine aéronautique : </b>
+                </p>
                 <ul>
-                    <div class="mt-2"><b><a href="https://www.azurdrones.com/fr/" class="text-orange">Azur Drones</a> (Client)</b>
-                        <ul>
-                            <li class="mt-2"><b>Projet :</b> Création d'une interface cartographique pour la surveillance industrielle par drones. </li>
-                            <li class="mt-2"><b>Technologies utilisées:</b> Python, Django, DRF, Leaflet, Docker, GeoDjango, PostGIS, Websockets, AJAX. </li>
-                        </ul>
-                    </div>
-
-                    <div class="mt-2"><b><a href="https://omnicite.fr/" class="text-orange">Omnicité</a> (Client)</b>
-                        <ul>
-                            <li class="mt-2"><b>Projet :</b> Maintenance et développement d'une plateforme de devis et de facturation pour les entrepreneurs et l'équipe de gestion. </li>
-                            <li class="mt-2"><b>Technologies utilisées :</b> Python, Django, MySQL, Docker, Postman. Communication avec le front-end Vue.js via une API REST. </li>
-                        </ul>
-                    </div>
-
-                    <div class="mt-2"><b><a href="https://www.groupefindis.fr/" class="text-orange">Findis</a> (Client)</b>
-                        <ul>
-                            <li class="mt-2"><b>Projet :</b> Implémentation d'un traducteur open source permettant la transmission de commandes/factures dans le respect de la norme EDI. </li>
-                            <li class="mt-2"><b>Technologies utilisées :</b> Python, Django, MariaDB, Docker, Docker Compose, EDI (edifact), PyAS2. </li>
-                        </ul>
-                    </div>
-
+                    <li class="ml-3"><b>Projet :</b> Création d'une interface cartographique pour la surveillance industrielle par drones. </li>
+                    <li class="ml-3 mt-2"><b>Technologies utilisées:</b> Python, Django, DRF, Leaflet, Docker, GeoDjango, PostGIS, Websockets, AJAX. </li>
                 </ul>
 
-                <p class="mt-4">J'ai également maîtrisé différentes <b>méthodes de travail</b> au fil des projets, notamment :</p>
+                <p class="text-primary mt-4 ml-3">
+                    <i class="fa-solid fa-arrow-right mr-1"></i>
+                    <b> Pour une coopérative entrepreunariale : </b>
+                </p>
                 <ul>
-                    <li>Git, GitFlow, intégration continue (CI/CD) et tests.</li>
+                    <li class="ml-3"><b>Projet :</b> Maintenance et développement d'une plateforme de devis et de facturation pour des entrepreneurs, et pour l'équipe de gestion. </li>
+                    <li class="ml-3 mt-2"><b>Technologies utilisées :</b> Python, Django, MySQL, Docker, Postman. Communication avec le front-end Vue.js via une API REST. </li>
+                </ul>
+
+                <p class="text-primary mt-4 ml-3">
+                    <i class="fa-solid fa-arrow-right mr-1"></i>
+                    <b> Pour un client du domaine de la grande distribution :</b>
+                </p>
+                <ul>
+                    <li class="ml-3"><b>Projet :</b> Implémentation d'un traducteur open source permettant la transmission de commandes/factures dans le respect de la norme EDI. </li>
+                    <li class="ml-3 mt-2"><b>Technologies utilisées :</b> Python, Django, MariaDB, Docker, Docker Compose, EDI (edifact), PyAS2. </li>
+                </ul>
+
+                <p class="margin-top-3rem">J'ai également assimilé différentes <b>méthodes de travail</b> au fil des projets, notamment :</p>
+                <ul>
+                    <li>Git, GitFlow, intégration continue (CI/CD), conteneurisation, et tests.</li>
                     <li>Prise de notes, documentation et échanges avec les clients.</li>
-                    <li>Prise de décisions techniques, affinements et estimations.</li>
+                    <li>Prise de décisions techniques, affinages et estimations.</li>
                     <li>Utilisation de méthodes agiles, Kanban et livraison continue.</li>
                 </ul>
             </div>
@@ -104,7 +108,7 @@
                 <h4 class="mb-0">Développeur d’application - Python</h4>
                 <p class="lead">Openclassrooms - Remote</p>
                 <p>Dans le cadre d'une reconversion, j'ai suivi cette formation à distance sur une durée d'un an et demi - équivalence Bac+3/4. De nombreux projets concrets y ont été réalisés. Je vous invite à les consulter dans la rubrique <a href="{% url 'portfolio' %}" class="text-orange">Mes projets personnels.</a></p>
-                    <a  href="https://openclassrooms.com/fr/paths/518-developpeur-dapplication-python" class="text-orange">Consulter le détail de la formation.</a></p>
+                <a href="https://openclassrooms.com/fr/paths/518-developpeur-dapplication-python "target="_blank" class="text-orange">Consulter le détail de la formation.</a></p>
             </div>
             <div class="col-lg-4 text-lg-right"><div class="text-gray-400 small">Octobre 2019 - Avril 2021</div></div>
         </div>  
@@ -167,11 +171,11 @@
         <div class="row">
             <div class="col-lg-8 mb-4 mb-lg-0">
                 <h3>Guillaume Merle</h3>
-                <p class="lead mb-0">+33 06.80.98.46.08</p>
+                <p class="lead mb-0"><a href="tel:0680984608"> +33 06.80.98.46.08</a></p>
                 <a href="mailto:gemacx@gmail.com">gemacx@gmail.com</a>
             </div>
             <div class="col-lg-4 text-lg-right">
-                <a class="btn btn-teal btn-lg font-weight-500" href="https://drive.google.com/file/d/1TlhOY6FazRYP60lpPx_AA6t-f0dLT88i/view?usp=sharing"><i class="fas fa-file-pdf text-white-75 mr-2"></i>Télécharger le CV</a>
+                <a class="btn btn-teal btn-lg font-weight-500" href="https://drive.google.com/file/d/1TlhOY6FazRYP60lpPx_AA6t-f0dLT88i/view?usp=sharing" target="_blank"><i class="fas fa-file-pdf text-white-75 mr-2"></i>Télécharger le CV</a>
             </div>
         </div>
     </div>

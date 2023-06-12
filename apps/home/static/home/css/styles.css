@@ -21888,3 +21888,7 @@ section {
 .img-error {
   max-width: 20rem;
 }
+
+.margin-top-3rem {
+  margin-top: 2rem;
+}
