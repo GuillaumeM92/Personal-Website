@@ -83,12 +83,14 @@ le sont aussi sur le serveur).
 
 1. `mkdir -p /var/www/guillaume-merle.fr`
 2. Copier `deploy/nginx-personal_website.conf` dans `/etc/nginx/sites-enabled/personal_website`
-   (l'ancienne version est sauvegardée dans `/etc/nginx/sites-available/personal_website.django.bak`)
 3. `nginx -t && systemctl reload nginx`
 
 Les anciennes adresses du site Django (`/about/`, `/portfolio/`, `/about-en/`, `/portfolio-en/`)
 sont redirigées en 301 par nginx.
 
-**Revenir à l'ancien site Django** : recopier la sauvegarde `.django.bak` dans `sites-enabled/personal_website`,
-puis `nginx -t && systemctl reload nginx`. Le code Django et son gunicorn (supervisor,
-`personal_website-gunicorn`) sont toujours sur le serveur, et le code est dans l'historique git.
+Le certificat Let's Encrypt `guillaume-merle.fr` couvre aussi labouygue.fr, grandpy et purbeurre
+(renouvellement automatique par certbot).
+
+**Ancien site Django** : retiré le 16/09/2026 (voir `deploy/cleanup-2026-09-16.sh`). Sa config nginx,
+son service supervisor et son dossier sont archivés sur le serveur dans `/root/archive-2026-09-16/`,
+et le code est dans l'historique git.
