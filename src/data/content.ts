@@ -18,7 +18,7 @@ export const links = {
 
 // Date de sortie de la 1.0 de Space Defender. Le site bascule seul sur « disponible »
 // une fois la date passée (petit script côté navigateur, pas besoin de redéployer).
-export const sdRelease = '2026-09-29T19:00:00+02:00';
+export const sdRelease = '2026-09-24T19:00:00+02:00';
 
 export const paths = {
   fr: { home: '/', cv: '/cv/', pdf: '/cv/guillaume-merle-cv.pdf' },
@@ -47,7 +47,7 @@ export const ui = {
       ctaCv: 'Voir mon CV',
       ctaContact: 'Me contacter',
       sdTeaser: 'Space Defender 1.0',
-      sdTeaserDate: 'le 29 septembre sur Steam',
+      sdTeaserDate: 'le 24 septembre sur Steam',
       sdTeaserOut: 'disponible sur Steam',
       portraitAlt: 'Portrait de Guillaume Merle',
     },
@@ -153,7 +153,7 @@ export const ui = {
           "Mon premier jeu, développé seul avec Unity et C#, en parallèle d'un emploi à plein temps. Il est sorti en accès anticipé sur Steam en mai 2025, et les retours des joueurs ont façonné la version 1.0 : le système d'ailiers est né d'une suggestion faite sur Discord.",
         statusSoon: 'Sortie 1.0',
         statusOut: 'Disponible en 1.0',
-        statusSoonDate: '29 septembre 2026',
+        statusSoonDate: '24 septembre 2026',
         statusOutDate: 'sur Steam',
         stats: [
           { v: '8', k: 'vaisseaux' },
@@ -287,7 +287,7 @@ export const ui = {
       ctaCv: 'View my resume',
       ctaContact: 'Get in touch',
       sdTeaser: 'Space Defender 1.0',
-      sdTeaserDate: 'out September 29 on Steam',
+      sdTeaserDate: 'out September 24 on Steam',
       sdTeaserOut: 'out now on Steam',
       portraitAlt: 'Portrait of Guillaume Merle',
     },
@@ -389,7 +389,7 @@ export const ui = {
           'My first game, made solo in Unity and C# alongside a full-time job. It entered Early Access on Steam in May 2025, and player feedback shaped version 1.0: the wingmen system started as a suggestion on Discord.',
         statusSoon: '1.0 release',
         statusOut: 'Version 1.0',
-        statusSoonDate: 'September 29, 2026',
+        statusSoonDate: 'September 24, 2026',
         statusOutDate: 'out now on Steam',
         stats: [
           { v: '8', k: 'ships' },
