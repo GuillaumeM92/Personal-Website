@@ -128,7 +128,7 @@ const site = 'guillaume-merle.fr';
           {
             c.projects.map((p) => (
               <li>
-                <strong>{p.name}</strong> — {p.text}
+                <strong><a href={p.url}>{p.name}</a></strong> — {p.text}
               </li>
             ))
           }
