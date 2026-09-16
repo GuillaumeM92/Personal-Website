@@ -1,0 +1,78 @@
+---
+import Icon from './Icon.astro';
+import { ui, links, paths, type Lang } from '../data/content';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = ui[lang];
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="wrap row">
+    <p>© {year} Guillaume Merle · <span class="muted">{t.footer.made}</span></p>
+    <nav aria-label={lang === 'fr' ? 'Liens' : 'Links'}>
+      <a href={links.linkedin} target="_blank" rel="me noopener"><Icon name="linkedin" label="LinkedIn" /></a>
+      <a href={links.github} target="_blank" rel="me noopener"><Icon name="github" label="GitHub" /></a>
+      <a href={`mailto:${links.email}`}><Icon name="mail" label="E-mail" /></a>
+      <a href={links.studio} target="_blank" rel="noopener" class="text">Petit Vaisseau</a>
+      <a href={`${paths[lang].home}#top`} class="text top">
+        {t.footer.backTop}
+        <Icon name="arrowUp" />
+      </a>
+    </nav>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    padding-block: 2rem 2.5rem;
+    border-top: 1px solid var(--line);
+    background: rgb(4 8 15 / 0.7);
+    font-size: 0.88rem;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem 2rem;
+  }
+
+  .muted {
+    color: var(--muted);
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem 1.1rem;
+  }
+
+  nav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: var(--ink-soft);
+    text-decoration: none;
+  }
+
+  nav a:hover {
+    color: var(--accent);
+  }
+
+  nav :global(svg) {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+
+  .top :global(svg) {
+    width: 0.95rem;
+    height: 0.95rem;
+  }
+</style>

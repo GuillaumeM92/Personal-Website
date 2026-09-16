@@ -1,0 +1,615 @@
+---
+import { Image } from 'astro:assets';
+import Icon from './Icon.astro';
+import ReleaseStatus from './ReleaseStatus.astro';
+import keyArt from '../assets/sd/key-art.jpg';
+import shot1 from '../assets/sd/01.jpg';
+import shot2 from '../assets/sd/02.jpg';
+import shot3 from '../assets/sd/05.jpg';
+import shipIcon from '../assets/petit-vaisseau-icon.svg?raw';
+import { ui, links, type Lang } from '../data/content';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = ui[lang].projects;
+const sd = t.sd;
+const shots = [shot1, shot2, shot3];
+const q = lang === 'en' ? '?lang=en' : '';
+
+// Mini calendrier décoratif pour La Bouygue : quelques séjours fictifs.
+const stays = [
+  { row: 2, from: 3, to: 7, tone: 'a' },
+  { row: 3, from: 1, to: 3, tone: 'a' },
+  { row: 3, from: 6, to: 7, tone: 'b' },
+  { row: 4, from: 1, to: 2, tone: 'b' },
+  { row: 5, from: 3, to: 5, tone: 'c' },
+];
+---
+
+<section class="section" id={ui[lang].ids.projects}>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">{t.kicker}</p>
+      <h2 class="section-title">{t.title}</h2>
+      <p class="lead">{t.intro}</p>
+    </div>
+
+    <!-- Space Defender -->
+    <article class="sd card reveal" data-release-scope>
+      <a class="art" href={links.steam} target="_blank" rel="noopener">
+        <Image
+          src={keyArt}
+          alt={sd.keyArtAlt}
+          widths={[640, 960, 1280, 1600]}
+          sizes="(max-width: 980px) 100vw, 1120px"
+        />
+      </a>
+
+      <div class="sd-body">
+        <div class="sd-main">
+          <p class="label">
+            <Icon name="gamepad" />
+            {sd.label}
+          </p>
+          <h3>{sd.name}</h3>
+          <p class="pitch">{sd.pitch}</p>
+          <p class="muted">{sd.body}</p>
+          <ul class="features">
+            {sd.features.map((f) => <li>{f}</li>)}
+          </ul>
+          <p class="meta">{sd.meta}<br />{sd.platformsNext}</p>
+          <div class="buttons">
+            <a class="btn btn-ember" href={links.steam} target="_blank" rel="noopener">
+              {sd.steam}
+              <Icon name="external" />
+            </a>
+            <a class="btn" href={links.studioGame + q} target="_blank" rel="noopener">
+              {sd.page}
+              <Icon name="arrow" />
+            </a>
+            <a class="btn" href={links.trailer} target="_blank" rel="noopener">
+              <Icon name="play" />
+              {sd.trailer}
+            </a>
+          </div>
+        </div>
+
+        <aside class="sd-side">
+          <div class="status">
+            <span class="status-soon">{sd.statusSoon}</span>
+            <span class="status-out">{sd.statusOut}</span>
+            <ReleaseStatus soon={sd.statusSoonDate} out={sd.statusOutDate} class="status-date" />
+          </div>
+          <dl class="stats">
+            {
+              sd.stats.map((s) => (
+                <div>
+                  <dt>{s.k}</dt>
+                  <dd>{s.v}</dd>
+                </div>
+              ))
+            }
+          </dl>
+        </aside>
+      </div>
+
+      <ul class="shots" aria-label={lang === 'fr' ? 'Captures du jeu' : 'Screenshots'}>
+        {
+          shots.map((s, i) => (
+            <li>
+              <a href={s.src} target="_blank" rel="noopener">
+                <Image src={s} alt={sd.shotsAlt[i]} widths={[400, 640]} sizes="(max-width: 720px) 70vw, 360px" />
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </article>
+
+    <div class="pair">
+      <!-- Petit Vaisseau -->
+      <article class="card mini studio reveal">
+        <div class="visual studio-visual" aria-hidden="true">
+          <div class="studio-ship" set:html={shipIcon} />
+        </div>
+        <div class="mini-body">
+          <p class="label">{t.studio.label}</p>
+          <h3>{t.studio.name}</h3>
+          <p class="tagline">{t.studio.tagline}</p>
+          <p class="muted">{t.studio.body}</p>
+          <div class="buttons">
+            <a class="btn btn-primary" href={links.studio + q} target="_blank" rel="noopener">
+              {t.studio.cta}
+              <Icon name="external" />
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- La Bouygue -->
+      <article class="card mini bouygue reveal">
+        <div class="visual cal-visual" aria-hidden="true">
+          <div class="cal">
+            <div class="cal-head">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="cal-grid">
+              {Array.from({ length: 35 }, () => <i />)}
+              {
+                stays.map((s) => (
+                  <b
+                    class={`stay ${s.tone}`}
+                    style={`grid-row:${s.row};grid-column:${s.from} / ${s.to + 1}`}
+                  />
+                ))
+              }
+            </div>
+          </div>
+        </div>
+        <div class="mini-body">
+          <p class="label">{t.bouygue.label}</p>
+          <h3>{t.bouygue.name}</h3>
+          <p class="news"><span class="blip" aria-hidden="true"></span>{t.bouygue.news}</p>
+          <p class="muted">{t.bouygue.body}</p>
+          <ul class="tags">
+            {t.bouygue.tags.map((tag) => <li class="tag">{tag}</li>)}
+          </ul>
+          <div class="buttons">
+            <a class="btn" href={links.bouygue} target="_blank" rel="noopener">
+              <Icon name="globe" />
+              {t.bouygue.site}
+            </a>
+            <a class="btn" href={links.bouygueRepo} target="_blank" rel="noopener">
+              <Icon name="github" />
+              {t.bouygue.repo}
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+  .label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .label :global(svg) {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .muted {
+    color: var(--ink-soft);
+  }
+
+  .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 0.5rem;
+  }
+
+  /* ---------- Space Defender ---------- */
+
+  .sd {
+    overflow: hidden;
+    border-color: rgb(255 122 77 / 0.25);
+    background:
+      radial-gradient(60rem 30rem at 100% 100%, rgb(255 122 77 / 0.08), transparent 60%),
+      var(--panel-solid);
+  }
+
+  .art {
+    display: block;
+    position: relative;
+    aspect-ratio: 1600 / 700;
+    overflow: hidden;
+  }
+
+  .art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 30%;
+    transition: transform 1.2s var(--ease);
+  }
+
+  .art:hover img {
+    transform: scale(1.025);
+  }
+
+  .art::after {
+    content: '';
+    position: absolute;
+    inset: auto 0 0;
+    height: 45%;
+    background: linear-gradient(transparent, var(--panel-solid));
+    pointer-events: none;
+  }
+
+  .sd-body {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+    gap: clamp(1.5rem, 4vw, 3rem);
+    padding: 0 clamp(1.25rem, 4vw, 2.75rem) clamp(1.5rem, 3vw, 2rem);
+    margin-top: -1rem;
+    position: relative;
+  }
+
+  .sd-main {
+    display: grid;
+    gap: 1rem;
+    align-content: start;
+  }
+
+  .sd .label {
+    color: var(--ember);
+  }
+
+  .sd h3 {
+    font-size: clamp(1.7rem, 3.6vw, 2.5rem);
+  }
+
+  .pitch {
+    font-size: 1.12rem;
+    color: var(--ink);
+  }
+
+  .features {
+    display: grid;
+    gap: 0.45rem;
+    list-style: none;
+    color: var(--ink-soft);
+  }
+
+  .features li {
+    position: relative;
+    padding-left: 1.4rem;
+  }
+
+  .features li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 2px;
+    background: var(--ember);
+    transform: rotate(45deg) scale(0.75);
+  }
+
+  .meta {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+
+  .sd-side {
+    display: grid;
+    gap: 1rem;
+    align-content: start;
+  }
+
+  .status {
+    display: grid;
+    gap: 0.15rem;
+    padding: 1.1rem 1.25rem;
+    border: 1px solid rgb(255 122 77 / 0.4);
+    border-radius: var(--radius);
+    background: var(--ember-wash);
+  }
+
+  .status-soon,
+  .status-out {
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #ffb59c;
+  }
+
+  .status-out,
+  .is-released .status-soon {
+    display: none;
+  }
+
+  .is-released .status-out {
+    display: inline;
+  }
+
+  .status :global(.status-date) {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    margin: 0;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--line);
+  }
+
+  .stats div {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    padding: 0.9rem 1rem;
+    background: var(--panel-solid);
+  }
+
+  .stats dd {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1.1;
+  }
+
+  .stats dt {
+    color: var(--muted);
+    font-size: 0.82rem;
+  }
+
+  .shots {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+    padding: 0 clamp(1.25rem, 4vw, 2.75rem) clamp(1.25rem, 4vw, 2.75rem);
+    list-style: none;
+  }
+
+  .shots a {
+    display: block;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+  }
+
+  .shots img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    transition:
+      transform 0.5s var(--ease),
+      opacity 0.3s;
+    opacity: 0.85;
+  }
+
+  .shots a:hover img {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+
+  /* ---------- cartes secondaires ---------- */
+
+  .pair {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .mini {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    overflow: hidden;
+  }
+
+  .mini-body {
+    display: grid;
+    gap: 0.85rem;
+    align-content: start;
+    padding: clamp(1.25rem, 3vw, 1.9rem);
+  }
+
+  .mini h3 {
+    font-size: 1.6rem;
+  }
+
+  .mini .buttons {
+    margin-top: auto;
+    padding-top: 0.5rem;
+  }
+
+  .visual {
+    position: relative;
+    height: 11rem;
+    overflow: hidden;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .studio {
+    border-color: rgb(56 214 224 / 0.25);
+  }
+
+  .studio-visual {
+    display: grid;
+    place-items: center;
+    background:
+      radial-gradient(circle at 50% 60%, rgb(56 214 224 / 0.22), transparent 55%),
+      repeating-linear-gradient(0deg, transparent 0 23px, rgb(56 214 224 / 0.05) 23px 24px),
+      repeating-linear-gradient(90deg, transparent 0 23px, rgb(56 214 224 / 0.05) 23px 24px),
+      #061220;
+  }
+
+  .studio-ship {
+    width: 6.5rem;
+    filter: drop-shadow(0 0 22px rgb(56 214 224 / 0.55));
+    animation: hover 5s ease-in-out infinite;
+  }
+
+  .studio-ship :global(svg) {
+    width: 100%;
+    height: auto;
+  }
+
+  @keyframes hover {
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
+  .tagline {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    color: var(--accent);
+  }
+
+  .news {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    justify-self: start;
+    padding: 0.25rem 0.75rem;
+    border: 1px solid rgb(56 214 224 / 0.3);
+    border-radius: 999px;
+    background: var(--accent-wash);
+    color: var(--accent-strong);
+    font-size: 0.82rem;
+    font-weight: 500;
+  }
+
+  .blip {
+    width: 0.45rem;
+    height: 0.45rem;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: blink 1.8s ease-in-out infinite;
+  }
+
+  @keyframes blink {
+    50% {
+      opacity: 0.3;
+    }
+  }
+
+  .cal-visual {
+    display: grid;
+    place-items: center;
+    background:
+      radial-gradient(circle at 30% 20%, rgb(122 150 255 / 0.14), transparent 60%),
+      #070e1a;
+  }
+
+  .cal {
+    width: min(78%, 20rem);
+    padding: 0.7rem;
+    border: 1px solid var(--line-strong);
+    border-radius: 12px;
+    background: rgb(12 23 36 / 0.9);
+    transform: perspective(700px) rotateX(18deg) rotateZ(-4deg);
+    box-shadow: 0 30px 50px -25px #000;
+  }
+
+  .cal-head {
+    display: flex;
+    gap: 0.3rem;
+    margin-bottom: 0.55rem;
+  }
+
+  .cal-head span {
+    height: 0.4rem;
+    border-radius: 4px;
+    background: var(--line-strong);
+  }
+
+  .cal-head span:first-child {
+    width: 40%;
+    background: #3b4d63;
+  }
+
+  .cal-head span:not(:first-child) {
+    width: 0.8rem;
+    margin-left: auto;
+  }
+
+  .cal-head span:last-child {
+    margin-left: 0;
+  }
+
+  .cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(5, 1.05rem);
+    gap: 3px;
+  }
+
+  .cal-grid i {
+    border-radius: 3px;
+    background: rgb(255 255 255 / 0.04);
+  }
+
+  .stay {
+    border-radius: 4px;
+    margin-block: 3px;
+  }
+
+  .stay.a {
+    background: #5b6cff;
+  }
+
+  .stay.b {
+    background: var(--accent);
+  }
+
+  .stay.c {
+    background: #2fbf8f;
+  }
+
+  @media (max-width: 980px) {
+    .sd-body {
+      grid-template-columns: 1fr;
+    }
+
+    .sd-side {
+      order: -1;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+    }
+
+    .pair {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .art {
+      aspect-ratio: 16 / 10;
+    }
+
+    .sd-side {
+      order: 0;
+      grid-template-columns: 1fr;
+    }
+
+    .shots {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+    }
+
+    .shots li {
+      flex: 0 0 72%;
+      scroll-snap-align: start;
+    }
+  }
+</style>

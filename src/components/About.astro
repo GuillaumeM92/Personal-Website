@@ -1,0 +1,99 @@
+---
+import { ui, type Lang } from '../data/content';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = ui[lang].about;
+---
+
+<section class="section" id={ui[lang].ids.about}>
+  <div class="wrap grid">
+    <div class="section-head reveal">
+      <p class="kicker">{t.kicker}</p>
+      <h2 class="section-title">{t.title}</h2>
+    </div>
+
+    <div class="text reveal">
+      {t.paragraphs.map((p, i) => <p class={i === 0 ? 'lead' : undefined}>{p}</p>)}
+    </div>
+
+    <dl class="facts card reveal">
+      {
+        t.facts.map((f) => (
+          <div>
+            <dt>{f.k}</dt>
+            <dd>{f.v}</dd>
+          </div>
+        ))
+      }
+    </dl>
+  </div>
+</section>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr);
+    gap: 0 clamp(2rem, 6vw, 5rem);
+    align-items: start;
+  }
+
+  .section-head {
+    margin-bottom: 2rem;
+  }
+
+  .text {
+    display: grid;
+    gap: 1.1rem;
+    color: var(--ink-soft);
+    grid-row: span 2;
+  }
+
+  .text .lead {
+    color: var(--ink);
+  }
+
+  .facts {
+    display: grid;
+    margin: 0;
+    padding: 0.4rem 1.4rem;
+  }
+
+  .facts div {
+    display: grid;
+    gap: 0.1rem;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .facts div:last-child {
+    border-bottom: 0;
+  }
+
+  dt {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  dd {
+    margin: 0;
+    font-weight: 500;
+  }
+
+  @media (max-width: 880px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+
+    .text {
+      grid-row: auto;
+      margin-bottom: 2rem;
+    }
+  }
+</style>

@@ -1,0 +1,273 @@
+---
+import Icon from './Icon.astro';
+import { ui, paths, type Lang } from '../data/content';
+
+interface Props {
+  lang: Lang;
+  /** Page équivalente dans l'autre langue. */
+  alternate: string;
+}
+
+const { lang, alternate } = Astro.props;
+const t = ui[lang];
+const home = paths[lang].home;
+const other: Lang = lang === 'fr' ? 'en' : 'fr';
+const sections = ['about', 'experience', 'projects', 'skills', 'contact'] as const;
+---
+
+<header class="site-header" data-header>
+  <div class="wrap bar">
+    <a class="brand" href={home} aria-label="Guillaume Merle">
+      <span class="mark" aria-hidden="true">GM</span>
+      <span class="brand-name">Guillaume Merle</span>
+    </a>
+
+    <nav class="nav" id="site-nav" aria-label={lang === 'fr' ? 'Navigation principale' : 'Main navigation'}>
+      <ul>
+        {
+          sections.map((s) => (
+            <li>
+              <a href={`${home}#${t.ids[s]}`} data-section={t.ids[s]}>
+                {t.nav[s]}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <div class="actions">
+      <a class="lang" href={alternate} hreflang={other} lang={other}>
+        <span class="sr-only">{t.otherLang}</span>
+        <span aria-hidden="true">{t.otherLangShort}</span>
+      </a>
+      <a class="btn btn-small cv" href={paths[lang].cv}>
+        <Icon name="file" />
+        {t.cv}
+      </a>
+      <button class="burger" type="button" aria-controls="site-nav" aria-expanded="false" data-burger>
+        <Icon name="menu" class="i-open" />
+        <Icon name="close" class="i-close" />
+        <span class="sr-only">Menu</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<script>
+  const header = document.querySelector<HTMLElement>('[data-header]');
+  const burger = document.querySelector<HTMLButtonElement>('[data-burger]');
+
+  if (header) {
+    const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 8);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  }
+
+  if (header && burger) {
+    const setOpen = (open: boolean) => {
+      header.classList.toggle('is-open', open);
+      burger.setAttribute('aria-expanded', String(open));
+    };
+    burger.addEventListener('click', () => setOpen(!header.classList.contains('is-open')));
+    header.querySelectorAll('.nav a').forEach((a) => a.addEventListener('click', () => setOpen(false)));
+    document.addEventListener('keydown', (e) => e.key === 'Escape' && setOpen(false));
+  }
+
+  // Section active dans la navigation.
+  const links = document.querySelectorAll<HTMLAnchorElement>('.nav a[data-section]');
+  const targets = [...links]
+    .map((a) => document.getElementById(a.dataset.section!))
+    .filter((el): el is HTMLElement => !!el);
+  if (targets.length) {
+    const spy = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          if (!e.isIntersecting) continue;
+          links.forEach((a) => a.toggleAttribute('aria-current', a.dataset.section === e.target.id));
+        }
+      },
+      { rootMargin: '-45% 0px -50% 0px' },
+    );
+    targets.forEach((t) => spy.observe(t));
+  }
+</script>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    border-bottom: 1px solid transparent;
+    transition:
+      background-color 0.3s var(--ease),
+      border-color 0.3s var(--ease);
+  }
+
+  .site-header.is-scrolled,
+  .site-header.is-open {
+    background: rgb(4 8 15 / 0.78);
+    border-bottom-color: var(--line);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+  }
+
+  .bar {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    height: var(--header-h);
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    text-decoration: none;
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  .mark {
+    display: grid;
+    place-items: center;
+    width: 2.2rem;
+    height: 2.2rem;
+    border: 1px solid var(--line-strong);
+    border-radius: 10px;
+    background: linear-gradient(145deg, rgb(56 214 224 / 0.18), transparent 70%);
+    color: var(--accent);
+    font-size: 0.85rem;
+    letter-spacing: 0.02em;
+  }
+
+  .nav {
+    margin-inline: auto;
+  }
+
+  .nav ul {
+    display: flex;
+    gap: 0.25rem;
+    list-style: none;
+  }
+
+  .nav a {
+    display: block;
+    padding: 0.45rem 0.8rem;
+    border-radius: 999px;
+    color: var(--muted);
+    font-size: 0.92rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition:
+      color 0.2s,
+      background-color 0.2s;
+  }
+
+  .nav a:hover {
+    color: var(--ink);
+  }
+
+  .nav a[aria-current] {
+    color: var(--ink);
+    background: rgb(255 255 255 / 0.06);
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .lang {
+    display: grid;
+    place-items: center;
+    min-width: 2.35rem;
+    height: 2.35rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    color: var(--ink-soft);
+    font: 600 0.78rem/1 var(--font-mono);
+    letter-spacing: 0.06em;
+    text-decoration: none;
+  }
+
+  .lang:hover {
+    border-color: var(--accent);
+    color: var(--ink);
+  }
+
+  .burger {
+    display: none;
+    place-items: center;
+    width: 2.6rem;
+    height: 2.6rem;
+    padding: 0;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: transparent;
+    color: var(--ink);
+    cursor: pointer;
+  }
+
+  .burger :global(svg) {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .burger :global(.i-close),
+  .is-open .burger :global(.i-open) {
+    display: none;
+  }
+
+  .is-open .burger :global(.i-close) {
+    display: block;
+  }
+
+  @media (max-width: 880px) {
+    .brand-name {
+      display: none;
+    }
+
+    .actions {
+      margin-left: auto;
+    }
+
+    .burger {
+      display: grid;
+    }
+
+    .nav {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      display: none;
+      padding: 0.5rem var(--gutter) 1.25rem;
+      background: rgb(4 8 15 / 0.96);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .is-open .nav {
+      display: block;
+    }
+
+    .nav ul {
+      flex-direction: column;
+    }
+
+    .nav a {
+      padding: 0.85rem 0.25rem;
+      border-radius: 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 1.05rem;
+      color: var(--ink);
+    }
+
+    .nav a[aria-current] {
+      background: none;
+      color: var(--accent);
+    }
+  }
+</style>

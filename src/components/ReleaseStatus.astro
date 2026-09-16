@@ -1,0 +1,27 @@
+---
+// Affiche `soon` avant la sortie 1.0 de Space Defender, `out` après.
+// Le texte est choisi à la génération du site, puis corrigé dans le navigateur
+// si la date est passée depuis : pas besoin de redéployer le jour J.
+import { sdRelease } from '../data/content';
+
+interface Props {
+  soon: string;
+  out: string;
+  class?: string;
+}
+
+const { soon, out, class: className } = Astro.props;
+const released = Date.now() >= Date.parse(sdRelease);
+---
+
+<span class={className} data-release={sdRelease} data-out={out}>{released ? out : soon}</span>
+
+<script>
+  const released = (iso: string) => Date.now() >= Date.parse(iso);
+  document.querySelectorAll<HTMLElement>('[data-release]').forEach((el) => {
+    if (released(el.dataset.release!)) {
+      if (el.dataset.out) el.textContent = el.dataset.out;
+      el.closest('[data-release-scope]')?.classList.add('is-released');
+    }
+  });
+</script>

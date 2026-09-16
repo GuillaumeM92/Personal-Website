@@ -1,0 +1,219 @@
+---
+import { ui, type Lang } from '../data/content';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = ui[lang].experience;
+---
+
+<section class="section" id={ui[lang].ids.experience}>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">{t.kicker}</p>
+      <h2 class="section-title">{t.title}</h2>
+    </div>
+
+    <ol class="timeline">
+      {
+        t.items.map((item) => (
+          <li class:list={['item reveal', { current: !item.end }]}>
+            <div class="when">
+              <span>{item.start}</span>
+              <span class="arrow" aria-hidden="true">→</span>
+              <span class:list={{ now: !item.end }}>{item.end ?? t.now}</span>
+            </div>
+            <span class="node" aria-hidden="true" />
+            <article class="card body">
+              <header>
+                <h3>{item.title}</h3>
+                <p class="org">
+                  <strong>{item.org}</strong>
+                  <span>{item.kind}</span>
+                  <span>{item.place}</span>
+                </p>
+              </header>
+              <p class="summary">{item.summary}</p>
+              <ul class="bullets">
+                {item.bullets.map((b) => (
+                  <li>{b}</li>
+                ))}
+              </ul>
+              <ul class="tags">
+                {item.tags.map((tag) => (
+                  <li class="tag">{tag}</li>
+                ))}
+              </ul>
+            </article>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>
+
+<style>
+  .timeline {
+    position: relative;
+    display: grid;
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    left: calc(10rem + 1.25rem);
+    width: 1px;
+    background: linear-gradient(var(--accent), var(--line) 30%, var(--line) 80%, transparent);
+  }
+
+  .item {
+    display: grid;
+    grid-template-columns: 10rem 2.5rem minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .when {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0 0.35rem;
+    padding-top: 1.45rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--muted);
+    text-align: right;
+  }
+
+  .when .now {
+    color: var(--accent);
+  }
+
+  .node {
+    justify-self: center;
+    margin-top: 1.7rem;
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 50%;
+    border: 2px solid var(--line-strong);
+    background: var(--bg);
+  }
+
+  .current .node {
+    border-color: var(--accent);
+    background: var(--accent);
+    box-shadow: 0 0 0 5px var(--accent-wash);
+  }
+
+  .body {
+    display: grid;
+    gap: 0.9rem;
+    padding: clamp(1.25rem, 3vw, 1.75rem);
+    transition: border-color 0.3s;
+  }
+
+  .body:hover {
+    border-color: var(--line-strong);
+  }
+
+  .current .body {
+    border-color: rgb(56 214 224 / 0.35);
+    background:
+      linear-gradient(135deg, rgb(56 214 224 / 0.07), transparent 45%),
+      var(--panel);
+  }
+
+  h3 {
+    font-size: clamp(1.15rem, 2vw, 1.35rem);
+  }
+
+  .org {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.15rem 0;
+    margin-top: 0.35rem;
+    color: var(--muted);
+    font-size: 0.92rem;
+  }
+
+  .org strong {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .org > * + *::before {
+    content: '·';
+    margin-inline: 0.5rem;
+    color: var(--line-strong);
+  }
+
+  .summary {
+    color: var(--ink);
+  }
+
+  .bullets {
+    display: grid;
+    gap: 0.4rem;
+    list-style: none;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+  }
+
+  .bullets li {
+    position: relative;
+    padding-left: 1.2rem;
+  }
+
+  .bullets li::before {
+    content: '';
+    position: absolute;
+    left: 0.1rem;
+    top: 0.68em;
+    width: 0.45rem;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  @media (max-width: 720px) {
+    .timeline::before {
+      left: 0.35rem;
+    }
+
+    .item {
+      grid-template-columns: 1.6rem minmax(0, 1fr);
+    }
+
+    .when {
+      grid-column: 2;
+      justify-content: flex-start;
+      padding: 0 0 0.5rem;
+      text-align: left;
+    }
+
+    .node {
+      grid-column: 1;
+      grid-row: 1;
+      justify-self: start;
+      margin-top: 0.35rem;
+    }
+
+    .body {
+      grid-column: 2;
+    }
+
+    .org {
+      flex-direction: column;
+    }
+
+    .org > * + *::before {
+      content: none;
+    }
+  }
+</style>

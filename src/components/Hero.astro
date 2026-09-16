@@ -1,0 +1,341 @@
+---
+import { Image } from 'astro:assets';
+import Icon from './Icon.astro';
+import ReleaseStatus from './ReleaseStatus.astro';
+import portrait from '../assets/portrait.png';
+import shipIcon from '../assets/petit-vaisseau-icon.svg?raw';
+import { ui, paths, links, type Lang } from '../data/content';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = ui[lang].hero;
+const ids = ui[lang].ids;
+---
+
+<section class="hero">
+  <div class="wrap grid">
+    <div class="copy">
+      <p class="role reveal">
+        <span class="dot" aria-hidden="true"></span>
+        {t.role}
+        <span class="sep" aria-hidden="true">/</span>
+        <span class="stack">{t.stack}</span>
+      </p>
+      <h1 class="reveal">Guillaume<br />Merle</h1>
+      <p class="lead reveal">{t.lead}</p>
+
+      <ul class="meta reveal">
+        <li><Icon name="pin" />{t.location}</li>
+        <li><Icon name="calendar" />{t.years}</li>
+      </ul>
+
+      <div class="cta reveal">
+        <a class="btn btn-primary" href={paths[lang].cv}>
+          <Icon name="file" />
+          {t.ctaCv}
+        </a>
+        <a class="btn" href={`#${ids.contact}`}>
+          <Icon name="mail" />
+          {t.ctaContact}
+        </a>
+        <a class="icon-btn" href={links.linkedin} rel="me noopener" target="_blank">
+          <Icon name="linkedin" label="LinkedIn" />
+        </a>
+        <a class="icon-btn" href={links.github} rel="me noopener" target="_blank">
+          <Icon name="github" label="GitHub" />
+        </a>
+      </div>
+    </div>
+
+    <div class="visual reveal">
+      <div class="orbit" aria-hidden="true">
+        <div class="ring ring-1"></div>
+        <div class="ring ring-2"></div>
+        <div class="ship-track"><div class="ship" set:html={shipIcon} /></div>
+      </div>
+      <Image
+        class="portrait"
+        src={portrait}
+        alt={t.portraitAlt}
+        widths={[280, 420, 560]}
+        sizes="(max-width: 880px) 240px, 340px"
+        loading="eager"
+        fetchpriority="high"
+      />
+
+      <a class="teaser" href={`#${ids.projects}`}>
+        <span class="teaser-label">{t.sdTeaser}</span>
+        <ReleaseStatus soon={t.sdTeaserDate} out={t.sdTeaserOut} class="teaser-date" />
+        <Icon name="arrow" />
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding-block: clamp(3rem, 8vw, 6.5rem) clamp(4rem, 9vw, 7rem);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(2.5rem, 6vw, 5rem);
+  }
+
+  .copy {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .role {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem 0.6rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  .dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 4px var(--accent-wash);
+    animation: pulse 2.6s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    50% {
+      box-shadow: 0 0 0 8px rgb(56 214 224 / 0);
+    }
+  }
+
+  .sep {
+    color: var(--line-strong);
+  }
+
+  .stack {
+    color: var(--accent);
+  }
+
+  h1 {
+    font-size: clamp(3.2rem, 9vw, 6.4rem);
+    font-weight: 700;
+    line-height: 0.95;
+    letter-spacing: -0.045em;
+    background: linear-gradient(180deg, #fff 30%, #9fb3c2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .lead {
+    max-width: 34rem;
+    font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+    line-height: 1.55;
+  }
+
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    list-style: none;
+    color: var(--muted);
+    font-size: 0.92rem;
+  }
+
+  .meta li {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+  }
+
+  .meta :global(svg) {
+    width: 1rem;
+    height: 1rem;
+    color: var(--accent);
+  }
+
+  .cta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+  }
+
+  .icon-btn {
+    display: grid;
+    place-items: center;
+    width: 2.9rem;
+    height: 2.9rem;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    color: var(--ink-soft);
+    transition:
+      color 0.2s,
+      border-color 0.2s,
+      transform 0.2s var(--ease);
+  }
+
+  .icon-btn:hover {
+    color: var(--ink);
+    border-color: var(--accent);
+    transform: translateY(-1px);
+  }
+
+  .icon-btn :global(svg) {
+    width: 1.15rem;
+    height: 1.15rem;
+  }
+
+  /* ---------- visuel ---------- */
+
+  .visual {
+    position: relative;
+    display: grid;
+    place-items: center;
+    aspect-ratio: 1;
+    max-width: 100%;
+    width: min(100%, 460px);
+    justify-self: center;
+  }
+
+  .portrait {
+    position: relative;
+    width: 74%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: 50% 30%;
+    border-radius: 50%;
+    border: 1px solid var(--line-strong);
+    box-shadow:
+      0 0 0 10px rgb(4 8 15 / 0.7),
+      0 30px 80px -20px rgb(56 214 224 / 0.35);
+    filter: saturate(0.92) contrast(1.02);
+  }
+
+  .orbit {
+    position: absolute;
+    inset: 0;
+  }
+
+  .ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 1px dashed rgb(56 214 224 / 0.22);
+  }
+
+  .ring-2 {
+    inset: 9%;
+    border-style: solid;
+    border-color: rgb(255 255 255 / 0.05);
+  }
+
+  .ship-track {
+    position: absolute;
+    inset: 0;
+    animation: orbit 26s linear infinite;
+  }
+
+  .ship {
+    position: absolute;
+    top: -1.1rem;
+    left: 50%;
+    width: 2.2rem;
+    height: 2.2rem;
+    margin-left: -1.1rem;
+    transform: rotate(90deg);
+    filter: drop-shadow(0 0 10px rgb(56 214 224 / 0.6));
+  }
+
+  .ship :global(svg) {
+    width: 100%;
+    height: 100%;
+  }
+
+  @keyframes orbit {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .teaser {
+    position: absolute;
+    bottom: 2%;
+    right: -2%;
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    column-gap: 0.75rem;
+    padding: 0.7rem 0.95rem 0.7rem 1.1rem;
+    border: 1px solid rgb(255 122 77 / 0.35);
+    border-radius: 16px;
+    background: rgb(20 12 10 / 0.82);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    text-decoration: none;
+    box-shadow: 0 18px 40px -18px rgb(255 122 77 / 0.45);
+    transition:
+      transform 0.25s var(--ease),
+      border-color 0.25s;
+  }
+
+  .teaser:hover {
+    transform: translateY(-2px);
+    border-color: var(--ember);
+  }
+
+  .teaser-label {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.98rem;
+  }
+
+  .teaser :global(.teaser-date) {
+    grid-column: 1;
+    color: #ffb59c;
+    font-size: 0.82rem;
+  }
+
+  .teaser :global(svg) {
+    grid-row: 1 / span 2;
+    grid-column: 2;
+    width: 1.1rem;
+    height: 1.1rem;
+    color: var(--ember);
+  }
+
+  @media (max-width: 880px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+
+    .visual {
+      order: -1;
+      width: min(100%, 300px);
+    }
+
+    .teaser {
+      right: 50%;
+      bottom: -6%;
+      transform: translateX(50%);
+      white-space: nowrap;
+    }
+
+    .teaser:hover {
+      transform: translateX(50%) translateY(-2px);
+    }
+  }
+</style>

@@ -1,0 +1,140 @@
+---
+import { ui, type Lang } from '../data/content';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = ui[lang].skills;
+---
+
+<section class="section" id={ui[lang].ids.skills}>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">{t.kicker}</p>
+      <h2 class="section-title">{t.title}</h2>
+    </div>
+
+    <div class="groups">
+      {
+        t.groups.map((g, i) => (
+          <div class="card group reveal" style={`transition-delay:${i * 50}ms`}>
+            <h3>
+              <span class="num">{String(i + 1).padStart(2, '0')}</span>
+              {g.name}
+            </h3>
+            <ul class="tags">
+              {g.items.map((item) => (
+                <li class="tag">{item}</li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="extra">
+      <div class="reveal">
+        <h3 class="sub">{t.languagesTitle}</h3>
+        <ul class="langs">
+          {
+            t.languages.map((l) => (
+              <li>
+                <strong>{l.name}</strong>
+                <span>{l.level}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <div class="reveal">
+        <h3 class="sub">{t.interestsTitle}</h3>
+        <ul class="tags">
+          {t.interests.map((x) => <li class="tag">{x}</li>)}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .groups {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
+    gap: 1rem;
+  }
+
+  .group {
+    display: grid;
+    gap: 1rem;
+    align-content: start;
+    padding: 1.4rem;
+    transition: border-color 0.3s;
+  }
+
+  .group:hover {
+    border-color: rgb(56 214 224 / 0.35);
+  }
+
+  .group h3 {
+    display: flex;
+    align-items: baseline;
+    gap: 0.65rem;
+    font-size: 1.12rem;
+  }
+
+  .num {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: var(--accent);
+  }
+
+  .group .tag {
+    font-size: 0.84rem;
+  }
+
+  .extra {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem 3rem;
+    margin-top: 3rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .sub {
+    margin-bottom: 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    font-weight: 400;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .langs {
+    display: grid;
+    gap: 0.5rem;
+    list-style: none;
+  }
+
+  .langs li {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 0.75rem;
+    align-items: baseline;
+  }
+
+  .langs span {
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+  }
+
+  @media (max-width: 720px) {
+    .extra {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

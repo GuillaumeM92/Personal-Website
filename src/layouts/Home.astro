@@ -1,0 +1,51 @@
+---
+import Base from './Base.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Experience from '../components/Experience.astro';
+import Projects from '../components/Projects.astro';
+import Skills from '../components/Skills.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+import { ui, paths, type Lang } from '../data/content';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = ui[lang];
+const other: Lang = lang === 'fr' ? 'en' : 'fr';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Guillaume Merle',
+  jobTitle: t.hero.role,
+  url: new URL(paths[lang].home, Astro.site).href,
+  email: 'mailto:gemacx@gmail.com',
+  address: { '@type': 'PostalAddress', addressRegion: 'Nouvelle-Aquitaine', addressCountry: 'FR' },
+  knowsAbout: ['MLOps', 'Microsoft Azure', 'Azure Databricks', 'Python', 'Django', 'FastAPI', 'Unity'],
+  sameAs: [
+    'https://www.linkedin.com/in/guillaume-merle-8a239a207/',
+    'https://github.com/GuillaumeM92',
+    'https://petitvaisseau.guillaume-merle.fr/',
+  ],
+};
+---
+
+<Base lang={lang} title={t.metaTitle} description={t.metaDescription} alternate={paths[other].home}>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <div id="top"></div>
+  <Header lang={lang} alternate={paths[other].home} />
+  <main id="main">
+    <Hero lang={lang} />
+    <About lang={lang} />
+    <Experience lang={lang} />
+    <Projects lang={lang} />
+    <Skills lang={lang} />
+    <Contact lang={lang} />
+  </main>
+  <Footer lang={lang} />
+</Base>
