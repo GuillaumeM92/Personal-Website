@@ -1,12 +1,32 @@
 // Régénère l'image de partage (src/assets/og-cover.jpg, 1200×630)
-// et l'icône iOS (public/apple-touch-icon.png, 180×180).
+// l'icône iOS (public/apple-touch-icon.png, 180×180)
+// et public/favicon.ico (16, 32 et 48 px, rendus depuis public/favicon.svg).
 //
 //   node scripts/og-image.mjs
 //
 // À relancer seulement si le titre ou la photo changent.
 
 import { chromium } from 'playwright';
-import { readFile } from 'node:fs/promises';
+import { readFile, writeFile } from 'node:fs/promises';
+
+// Fichier .ico contenant des images PNG : [[taille, buffer], …].
+const ico = (images) => {
+  const head = Buffer.alloc(6 + 16 * images.length);
+  head.writeUInt16LE(1, 2);
+  head.writeUInt16LE(images.length, 4);
+  let offset = head.length;
+  images.forEach(([size, png], i) => {
+    const e = 6 + 16 * i;
+    head.writeUInt8(size % 256, e);
+    head.writeUInt8(size % 256, e + 1);
+    head.writeUInt16LE(1, e + 4);
+    head.writeUInt16LE(32, e + 6);
+    head.writeUInt32LE(png.length, e + 8);
+    head.writeUInt32LE(offset, e + 12);
+    offset += png.length;
+  });
+  return Buffer.concat([head, ...images.map(([, png]) => png)]);
+};
 
 const b64 = async (p) => (await readFile(p)).toString('base64');
 const portrait = await b64('src/assets/portrait.png');
@@ -78,6 +98,17 @@ try {
   await page.evaluate(() => document.fonts.ready);
   await page.screenshot({ path: 'public/apple-touch-icon.png' });
   console.log('✓ public/apple-touch-icon.png');
+
+  // favicon.ico : Safari n'affiche pas les favicons SVG.
+  const svg = await readFile('public/favicon.svg', 'utf8');
+  const pngs = [];
+  for (const size of [16, 32, 48]) {
+    await page.setViewportSize({ width: size, height: size });
+    await page.setContent(`<style>*{margin:0}svg{display:block;width:${size}px;height:${size}px}</style>${svg}`);
+    pngs.push([size, await page.screenshot({ omitBackground: true })]);
+  }
+  await writeFile('public/favicon.ico', ico(pngs));
+  console.log('✓ public/favicon.ico');
 } finally {
   await browser.close();
 }
