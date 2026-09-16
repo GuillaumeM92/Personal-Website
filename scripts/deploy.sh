@@ -10,5 +10,5 @@ HOST="${DEPLOY_HOST:-ionos}"
 DEST="/var/www/guillaume-merle.fr"
 
 npm run build
-rsync -rlz --delete --chmod=D755,F644 dist/ "$HOST:$DEST/"
+rsync -rlz --delete dist/ "$HOST:$DEST/"
 echo "✓ Déployé sur $HOST:$DEST — https://guillaume-merle.fr"
