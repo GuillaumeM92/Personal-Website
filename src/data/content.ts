@@ -172,8 +172,8 @@ export const ui = {
         page: 'Page du jeu',
         trailer: 'Bande-annonce',
         shotsAlt: [
-          'Une escadrille et ses ailiers au combat, en route vers la station Hathor-64',
-          'Échange de tirs près de la station Ramses-70',
+          'Le vaisseau du joueur et ses ailiers Jinx, Kestrel et Rook au combat, en route vers la station Romulus-05',
+          'Échange de tirs entre l’escadrille et un croiseur ennemi',
           'Le hangar : choix du vaisseau et de ses caractéristiques',
         ],
         keyArtAlt: 'Visuel de Space Defender : un vaisseau file au-dessus d’une planète, poursuivi par deux Drones',
@@ -408,8 +408,8 @@ export const ui = {
         page: 'Game page',
         trailer: 'Trailer',
         shotsAlt: [
-          'A squadron and its wingmen in combat, heading for Hathor-64 station',
-          'Exchanging fire near Ramses-70 station',
+          'The player’s ship and wingmen Jinx, Kestrel and Rook in combat, heading for Romulus-05 station',
+          'The squadron trading fire with an enemy cruiser',
           'The hangar: picking a ship and reviewing its stats',
         ],
         keyArtAlt: 'Space Defender key art: a ship races above a planet, chased by two Drones',
