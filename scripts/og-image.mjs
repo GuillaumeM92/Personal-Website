@@ -72,9 +72,9 @@ const og = `<!doctype html><html><head><style>${fontCss}
   <div class="glow"></div>
   <svg class="stars" viewBox="0 0 1200 630">${stars}</svg>
   <div class="copy">
-    <div class="role">MLOps · Azure · Databricks</div>
+    <div class="role">IA agentique · MLOps · Python</div>
     <h1>Guillaume<br>Merle</h1>
-    <p>Industrialisation de plateformes data &amp; IA.<br>Créateur de Space Defender sur Steam.</p>
+    <p>Agents IA et Claude Code, en production.<br>Fondateur du studio Petit Vaisseau.</p>
     <div class="url">guillaume-merle.fr</div>
   </div>
   <div class="visual"><div class="ring"></div><div class="photo"></div><div class="ship">${ship}</div></div>

@@ -27,9 +27,9 @@ export const paths = {
 
 export const ui = {
   fr: {
-    metaTitle: 'Guillaume Merle · Ingénieur Plateforme / MLOps',
+    metaTitle: 'Guillaume Merle · Ingénieur IA agentique & MLOps',
     metaDescription:
-      "Ingénieur Plateforme / MLOps spécialisé Azure et Databricks, basé près de Niort. Développeur Python depuis 5 ans, et créateur du jeu Space Defender sur Steam.",
+      "Ingénieur IA agentique & MLOps freelance, 100 % télétravail. Claude Code, agents et MCP, Python, Azure, Databricks. Fondateur de Petit Vaisseau, studio de jeux vidéo.",
     skip: 'Aller au contenu',
     nav: { about: 'Profil', experience: 'Parcours', projects: 'Projets', skills: 'Compétences', contact: 'Contact' },
     cv: 'CV',
@@ -38,12 +38,12 @@ export const ui = {
     ids: { about: 'profil', experience: 'parcours', projects: 'projets', skills: 'competences', contact: 'contact' },
 
     hero: {
-      role: 'Ingénieur Plateforme / MLOps',
-      stack: 'Azure · Databricks · Python',
+      role: 'Ingénieur IA agentique & MLOps',
+      stack: 'Claude Code · Agents · MCP · Python · Azure · Databricks',
       lead:
-        "J'industrialise des plateformes data et IA : pipelines, CI/CD, Databricks et mise en production. Le soir, je fabrique des jeux vidéo.",
-      location: 'Près de Niort · sur site ou télétravail partiel',
-      years: "5 ans d'expérience",
+        "Je mets de l'IA en production et j'aide les équipes à développer avec des agents IA, sans perdre en qualité. Le soir, je fabrique des jeux vidéo.",
+      location: 'Freelance · 100 % télétravail · français ou anglais',
+      availability: 'Temps partiel (2 à 3 jours par semaine) ou forfait',
       ctaCv: 'Voir mon CV',
       ctaContact: 'Me contacter',
       sdTeaser: 'Space Defender 1.0',
@@ -54,32 +54,61 @@ export const ui = {
 
     about: {
       kicker: 'Profil',
-      title: 'Entre le code, le cloud et la plateforme',
+      title: 'Des agents IA, mais en production',
       paragraphs: [
-        "Je suis actuellement en mission dans un grand groupe d'assurance, où j'industrialise des plateformes data et IA sur Azure. Au quotidien : MLOps, pipelines de données, CI/CD, Databricks, et mise en production de solutions fiables, sécurisées et faciles à maintenir.",
-        "Mon terrain de jeu, c'est la frontière entre le développement Python, le cloud Azure et l'ingénierie plateforme. Je tiens beaucoup à la robustesse, à l'automatisation et à la capacité de passer à l'échelle.",
-        "J'ai travaillé pour de grands comptes comme pour de petites équipes, en français comme en anglais. J'aime les missions où la technique compte autant que l'organisation.",
+        "Je mets de l'IA en production et j'aide les équipes de développement à travailler avec des agents IA (Claude Code) sans perdre en qualité.",
+        "Je travaille au quotidien avec Claude Code, en orchestrant plusieurs agents en parallèle. Je conçois les règles, les skills, les hooks, les serveurs MCP et les garde-fous qui rendent ce mode de travail fiable pour une équipe.",
+        "Derrière, il y a de la production réelle : deux ans comme ingénieur plateforme MLOps chez Covéa, sur Azure et Databricks, et une API gateway FastAPI pour un casino en ligne licencié, au sein d'une équipe anglophone.",
       ],
       facts: [
-        { k: 'Poste', v: 'Consultant MLOps · Groupe Covéa' },
         { k: 'Statut', v: 'Freelance' },
-        { k: 'Zone', v: 'Nouvelle-Aquitaine, proche Niort' },
+        { k: 'Mode', v: '100 % télétravail' },
+        { k: 'Format', v: 'Temps partiel (2 à 3 j/sem.) ou forfait' },
         { k: 'Langues', v: 'Français, anglais courant' },
       ],
     },
 
+    offers: {
+      kicker: 'Offres',
+      title: 'Ce que je peux faire pour vous',
+      items: [
+        {
+          name: 'Déployer Claude Code dans votre équipe',
+          format: 'Forfait de 3 à 5 jours',
+          body:
+            "Audit de vos pratiques, puis configuration : CLAUDE.md, skills, hooks, serveurs MCP et permissions. J'ajoute les garde-fous de revue et de CI, et je termine par un atelier de prise en main avec l'équipe.",
+          tags: ['Claude Code', 'MCP', 'Hooks', 'Revue & CI'],
+        },
+        {
+          name: 'Développer vos backends et vos agents',
+          format: 'Temps partiel ou forfait',
+          body:
+            "Backends Python et agents IA, de la conception à la mise en production, avec un workflow agentique qui livre vite sans sacrifier les tests ni la revue.",
+          tags: ['Python', 'FastAPI', 'Django', 'Agents IA'],
+        },
+        {
+          name: 'Industrialiser vos projets data et IA',
+          format: 'Temps partiel',
+          body:
+            "MLOps, CI/CD, mise en production et supervision de modèles et d'agents, sur Azure et Databricks.",
+          tags: ['MLOps', 'CI/CD', 'Azure', 'Databricks'],
+        },
+      ],
+      cta: 'Parler de votre projet',
+    },
+
     experience: {
       kicker: 'Parcours',
-      title: "De la reconversion à l'ingénierie plateforme",
+      title: 'Du développement Python à la production',
       now: "aujourd'hui",
       items: [
         {
-          title: 'Ingénieur Plateforme / MLOps – Azure & Databricks',
+          title: 'Ingénieur plateforme MLOps – Azure & Databricks',
           org: 'Groupe Covéa – SmartIA',
           kind: 'Consultant freelance',
           place: 'Niort · hybride',
           start: 'sept. 2024',
-          end: null,
+          end: 'nov. 2026',
           summary: "Industrialisation des plateformes data et IA d'un grand groupe d'assurance.",
           bullets: [
             'Conception et exploitation de plateformes data et IA sur Azure',
@@ -96,13 +125,13 @@ export const ui = {
           kind: 'Mission via Upwork',
           place: 'À distance',
           start: 'juil. 2023',
-          end: 'août 2024',
-          summary: 'Mission pour Scalexa, sur la plateforme de casino en ligne Full Color Games.',
+          end: 'nov. 2024',
+          summary: 'Mission pour un casino en ligne licencié : 1 600 heures, avis 5★.',
           bullets: [
-            "Développement d'une API Gateway avec FastAPI",
+            "Développement d'une API gateway avec FastAPI : paiements, multi-devises, intégrations tierces, OAuth2/JWT, PostgreSQL",
             'Travail quotidien au sein d’une équipe anglophone',
           ],
-          tags: ['Python', 'FastAPI', 'API REST'],
+          tags: ['Python', 'FastAPI', 'PostgreSQL', 'API REST'],
         },
         {
           title: 'Développeur Python / Django',
@@ -140,17 +169,17 @@ export const ui = {
     },
 
     projects: {
-      kicker: 'Projets perso',
-      title: 'Ce que je construis à côté',
+      kicker: 'La preuve par l’exemple',
+      title: 'Du jeu codé à la main au moteur 3D',
       intro:
-        "En dehors des missions, j'ai monté un petit studio de jeu vidéo et je développe des outils pour mes proches.",
+        "J'ai fondé Petit Vaisseau, mon studio de jeu vidéo solo. J'ai codé mon premier jeu à la main, puis je suis passé à Claude Code, sous mon pilotage, pour construire mon propre moteur 3D. Un seul développeur, plusieurs produits, et des technologies qui étaient hors de portée seul : c'est ce que permet un workflow agentique bien tenu.",
       sd: {
         label: 'Jeu vidéo · Petit Vaisseau',
         name: 'Space Defender: Frontier Squadron',
         pitch:
           "Un shooter spatial vu de dessus avec une progression RPG. Menez une escadrille contre l'invasion des Drones à travers trois galaxies.",
         body:
-          "Mon premier jeu, développé seul avec Unity et C#, en parallèle d'un emploi à plein temps. Il est sorti en accès anticipé sur Steam en mai 2025, et les retours des joueurs ont façonné la version 1.0 : le système d'ailiers est né d'une suggestion faite sur Discord.",
+          "Mon premier jeu, codé à la main avec Unity et C#, seul, en parallèle d'un emploi à plein temps. Sorti en accès anticipé sur Steam en mai 2025, il a dépassé les 3 000 exemplaires vendus, et compte 6 000 téléchargements sur iOS et Android. Les retours des joueurs ont façonné la 1.0 : le système d'ailiers est né d'une suggestion faite sur Discord.",
         statusSoon: 'Sortie 1.0',
         statusOut: 'Disponible en 1.0',
         statusSoonDate: '24 septembre 2026',
@@ -167,7 +196,7 @@ export const ui = {
           'Des Drones aux comportements distincts : tireurs d’élite, poseurs de mines, porte-chasseurs…',
         ],
         meta: 'Unity · C# · Windows et macOS · français et anglais · manette compatible · 13,49 €',
-        platformsNext: 'Linux envisagé, puis Android et iOS dans un second temps.',
+        platformsNext: 'Aussi sur iOS et Android, sous le nom Space Defender: Squadron, avec le premier acte gratuit.',
         steam: 'Voir sur Steam',
         page: 'Page du jeu',
         trailer: 'Bande-annonce',
@@ -179,11 +208,11 @@ export const ui = {
         keyArtAlt: 'Visuel de Space Defender : un vaisseau file au-dessus d’une planète, poursuivi par deux Drones',
       },
       studio: {
-        label: 'Studio indépendant',
+        label: 'Studio indépendant · moteur maison',
         name: 'Petit Vaisseau',
         tagline: 'Un studio d’une seule personne, et un vaisseau à la fois.',
         body:
-          "Le studio qui publie Space Defender. Sa règle : sortir petit, écouter les joueurs, corriger. Le site du studio réunit la page du jeu, le dossier de presse et le Discord.",
+          "Après Space Defender, je développe avec Claude Code, sous mon pilotage (architecture, revue, tests). J'ai construit Ancre, mon propre moteur 3D en C++, sur lequel je prépare trois jeux pour 2027 : Abysses: Meridian, Pelagia et Telluris.",
         cta: 'Visiter le site du studio',
       },
       bouygue: {
@@ -202,12 +231,12 @@ export const ui = {
       kicker: 'Compétences',
       title: 'Boîte à outils',
       groups: [
+        { name: 'IA agentique', items: ['Claude Code', 'Agents IA', 'Model Context Protocol (MCP)', 'CLAUDE.md, skills, hooks', 'Garde-fous de revue et de CI', 'LLMOps'] },
         { name: 'Cloud & MLOps', items: ['Microsoft Azure', 'Azure Databricks', 'MLOps', 'Pipelines de données', 'CI/CD', 'Industrialisation'] },
-        { name: 'Backend', items: ['Python', 'FastAPI', 'Django', 'Django REST Framework', 'API REST', 'WebSockets', 'Flask'] },
+        { name: 'Backend', items: ['Python', 'FastAPI', 'Django', 'Django REST Framework', 'API REST', 'WebSockets', 'Pytest'] },
         { name: 'Données', items: ['PostgreSQL', 'PostGIS / GeoDjango', 'MySQL / MariaDB', 'SQL', 'EDI (EDIFACT)'] },
-        { name: 'DevOps & outils', items: ['Docker', 'Docker Compose', 'Linux', 'Nginx', 'Gunicorn', 'Git / GitFlow', 'Sentry', 'Bash'] },
-        { name: 'Front & jeu vidéo', items: ['JavaScript', 'HTML / CSS', 'Leaflet', 'Unity', 'C#'] },
-        { name: 'Méthodes', items: ['Agile / Kanban', 'Tests (Pytest, Selenium)', 'UML', 'Documentation', 'Relation client'] },
+        { name: 'DevOps & outils', items: ['Docker', 'Linux', 'Nginx', 'Git / GitFlow', 'Azure DevOps', 'Sentry', 'Bash', 'Agile / Kanban'] },
+        { name: 'Jeu vidéo & front', items: ['C++ (moteur 3D)', 'Unity', 'C#', 'JavaScript', 'HTML / CSS', 'Leaflet'] },
       ],
       languagesTitle: 'Langues',
       languages: [
@@ -222,7 +251,7 @@ export const ui = {
     contact: {
       kicker: 'Contact',
       title: 'Une mission, un projet, une question ?',
-      body: "Le plus simple est de m'écrire. Je réponds personnellement.",
+      body: "Le plus simple est de m'écrire, en français ou en anglais. Je réponds personnellement.",
       email: 'Écrire un e-mail',
       copy: 'Copier l’adresse',
       copied: 'Adresse copiée',
@@ -241,18 +270,18 @@ export const ui = {
       back: 'Retour au site',
       print: 'Imprimer',
       pdf: 'Télécharger le PDF',
-      headline: 'Ingénieur Plateforme / MLOps – Azure & Databricks',
-      location: 'Parthenay (79) · proche Niort',
+      headline: 'Ingénieur IA agentique & MLOps – Python, Azure, Claude Code',
+      location: 'France · 100 % télétravail',
       profileTitle: 'Profil',
       profile:
-        "Ingénieur plateforme et MLOps avec 5 ans d'expérience en développement Python. J'industrialise des plateformes data et IA sur Azure et Databricks, avec une attention particulière à la robustesse, à l'automatisation et au passage à l'échelle. À l'aise en contexte grand compte comme en équipe internationale.",
+        "Ingénieur IA agentique et MLOps, freelance, 100 % à distance. Je mets de l'IA en production et j'aide les équipes à développer avec des agents IA (Claude Code, MCP) sans perdre en qualité. Deux ans d'industrialisation de plateformes data et IA sur Azure et Databricks chez Covéa, cinq ans de développement Python, en français comme en anglais.",
       experienceTitle: 'Expérience',
       educationTitle: 'Formation',
       skillsTitle: 'Compétences',
       projectsTitle: 'Projets personnels',
       projects: [
-        { name: 'Space Defender: Frontier Squadron', url: links.steam, text: 'Jeu vidéo publié sur Steam (Unity, C#). Développé seul, accès anticipé en mai 2025, version 1.0 en septembre 2026.' },
-        { name: 'Petit Vaisseau', url: links.studio, text: 'Studio de jeu vidéo indépendant : production, site, dossier de presse, communauté Discord.' },
+        { name: 'Space Defender: Frontier Squadron', url: links.steam, text: 'Jeu vidéo codé à la main (Unity, C#). Accès anticipé en mai 2025, 1.0 en septembre 2026. Plus de 3 000 exemplaires vendus sur Steam, 6 000 téléchargements sur iOS et Android.' },
+        { name: 'Petit Vaisseau', url: links.studio, text: 'Studio de jeu vidéo indépendant. Ancre, moteur 3D maison en C++ développé avec Claude Code sous mon pilotage ; trois jeux en préparation pour 2027.' },
         { name: 'La Bouygue', url: links.bouygue, text: 'Application Django de réservation et de gestion pour une maison familiale, en production depuis 2021.' },
       ],
       languagesTitle: 'Langues',
@@ -267,9 +296,9 @@ export const ui = {
   },
 
   en: {
-    metaTitle: 'Guillaume Merle · Platform / MLOps Engineer',
+    metaTitle: 'Guillaume Merle · Agentic AI & MLOps Engineer',
     metaDescription:
-      'Platform / MLOps engineer specialised in Azure and Databricks, based in western France. Python developer for 5 years, and maker of the game Space Defender on Steam.',
+      'Agentic AI & MLOps freelance engineer, fully remote. Claude Code, AI agents and MCP, Python, Azure, Databricks. Founder of Petit Vaisseau, an indie game studio.',
     skip: 'Skip to content',
     nav: { about: 'Profile', experience: 'Experience', projects: 'Projects', skills: 'Skills', contact: 'Contact' },
     cv: 'Resume',
@@ -278,12 +307,12 @@ export const ui = {
     ids: { about: 'profile', experience: 'experience', projects: 'projects', skills: 'skills', contact: 'contact' },
 
     hero: {
-      role: 'Platform / MLOps Engineer',
-      stack: 'Azure · Databricks · Python',
+      role: 'Agentic AI & MLOps Engineer',
+      stack: 'Claude Code · Agents · MCP · Python · Azure · Databricks',
       lead:
-        'I industrialise data and AI platforms: pipelines, CI/CD, Databricks and production releases. In the evenings, I make video games.',
-      location: 'Near Niort, France · on-site or partly remote',
-      years: '5 years of experience',
+        'I ship AI to production and help teams build with AI coding agents without lowering the quality bar. In the evenings, I make video games.',
+      location: 'Freelance · fully remote · English or French',
+      availability: 'Part-time (2 to 3 days a week) or fixed-price',
       ctaCv: 'View my resume',
       ctaContact: 'Get in touch',
       sdTeaser: 'Space Defender 1.0',
@@ -294,23 +323,51 @@ export const ui = {
 
     about: {
       kicker: 'Profile',
-      title: 'Where code, cloud and platform meet',
+      title: 'AI agents, in production',
       paragraphs: [
-        "I'm currently working with a major insurance group, industrialising data and AI platforms on Azure. Day to day that means MLOps, data pipelines, CI/CD, Databricks, and shipping solutions that are reliable, secure and easy to maintain.",
-        'My sweet spot is the boundary between Python development, Azure and platform engineering. I care a lot about robustness, automation and scaling.',
-        "I've worked with large enterprises and small teams alike, in French and in English, and I enjoy assignments where the organisational side matters as much as the technical one.",
+        'I ship AI to production and help development teams work with AI coding agents (Claude Code) without lowering the quality bar.',
+        'I work with Claude Code every day, running several agents in parallel. I design the rules, skills, hooks, MCP servers and guardrails that make this way of working reliable for a team.',
+        "It's backed by real production work: two years as a Platform/MLOps Engineer at Covéa on Azure and Databricks, and a FastAPI API gateway for a licensed online casino, within an English-speaking team.",
       ],
       facts: [
-        { k: 'Role', v: 'MLOps consultant · Covéa Group' },
         { k: 'Status', v: 'Freelance' },
-        { k: 'Area', v: 'Nouvelle-Aquitaine, near Niort' },
+        { k: 'Setup', v: 'Fully remote' },
+        { k: 'Format', v: 'Part-time (2–3 days/week) or fixed-price' },
         { k: 'Languages', v: 'French, fluent English' },
       ],
     },
 
+    offers: {
+      kicker: 'Services',
+      title: 'What I can do for you',
+      items: [
+        {
+          name: 'Roll out Claude Code to your team',
+          format: 'Fixed-price, 3 to 5 days',
+          body:
+            'An audit of how your team works, then the setup: CLAUDE.md, skills, hooks, MCP servers and permissions. I add review and CI guardrails, and finish with a hands-on workshop for the team.',
+          tags: ['Claude Code', 'MCP', 'Hooks', 'Review & CI'],
+        },
+        {
+          name: 'Build your backends and agents',
+          format: 'Part-time or fixed-price',
+          body:
+            'Python backends and AI agents, from design to production, with an agentic workflow that ships fast without cutting corners on tests or review.',
+          tags: ['Python', 'FastAPI', 'Django', 'AI agents'],
+        },
+        {
+          name: 'Industrialise your data and AI projects',
+          format: 'Part-time',
+          body: 'MLOps, CI/CD, deployment and monitoring of models and agents, on Azure and Databricks.',
+          tags: ['MLOps', 'CI/CD', 'Azure', 'Databricks'],
+        },
+      ],
+      cta: 'Talk about your project',
+    },
+
     experience: {
       kicker: 'Experience',
-      title: 'From career change to platform engineering',
+      title: 'From Python development to production',
       now: 'present',
       items: [
         {
@@ -319,7 +376,7 @@ export const ui = {
           kind: 'Freelance consultant',
           place: 'Niort · hybrid',
           start: 'Sep 2024',
-          end: null,
+          end: 'Nov 2026',
           summary: 'Industrialising the data and AI platforms of a major insurance group.',
           bullets: [
             'Designing and running data and AI platforms on Azure',
@@ -336,10 +393,13 @@ export const ui = {
           kind: 'Contract via Upwork',
           place: 'Remote',
           start: 'Jul 2023',
-          end: 'Aug 2024',
-          summary: 'Contract for Scalexa, on the Full Color Games online casino platform.',
-          bullets: ['Built an API Gateway with FastAPI', 'Worked daily within an English-speaking team'],
-          tags: ['Python', 'FastAPI', 'REST APIs'],
+          end: 'Nov 2024',
+          summary: 'Contract for a licensed online casino: 1,600 hours, 5★ review.',
+          bullets: [
+            'Built an API gateway with FastAPI: payments, multi-currency, third-party integrations, OAuth2/JWT, PostgreSQL',
+            'Worked daily within an English-speaking team',
+          ],
+          tags: ['Python', 'FastAPI', 'PostgreSQL', 'REST APIs'],
         },
         {
           title: 'Python / Django Developer',
@@ -377,16 +437,17 @@ export const ui = {
     },
 
     projects: {
-      kicker: 'Side projects',
-      title: 'What I build on the side',
-      intro: 'Outside client work, I run a tiny game studio and build tools for the people around me.',
+      kicker: 'Proof I ship',
+      title: 'From a hand-coded game to a 3D engine',
+      intro:
+        "I founded Petit Vaisseau, my solo game studio. I hand-coded my first game, then switched to Claude Code, with me in the driver's seat, to build my own 3D engine. One developer, several products, and tech that used to be out of reach for a solo dev: that's what a well-run agentic workflow enables.",
       sd: {
         label: 'Video game · Petit Vaisseau',
         name: 'Space Defender: Frontier Squadron',
         pitch:
           'A top-down space shooter with RPG progression. Lead a squadron against the Drone invasion across three galaxies.',
         body:
-          'My first game, made solo in Unity and C# alongside a full-time job. It entered Early Access on Steam in May 2025, and player feedback shaped version 1.0: the wingmen system started as a suggestion on Discord.',
+          'My first game, hand-coded solo in Unity and C# alongside a full-time job. It entered Early Access on Steam in May 2025, has sold over 3,000 copies, and has 6,000 downloads on iOS and Android. Player feedback shaped version 1.0: the wingmen system started as a suggestion on Discord.',
         statusSoon: '1.0 release',
         statusOut: 'Version 1.0',
         statusSoonDate: 'September 24, 2026',
@@ -403,7 +464,7 @@ export const ui = {
           'Drones with distinct behaviours: snipers, minelayers, carriers and more',
         ],
         meta: 'Unity · C# · Windows and macOS · English and French · controller support · €13.49',
-        platformsNext: 'Linux is being considered, with Android and iOS to follow later.',
+        platformsNext: 'Also on iOS and Android as Space Defender: Squadron, with the first act free.',
         steam: 'View on Steam',
         page: 'Game page',
         trailer: 'Trailer',
@@ -415,11 +476,11 @@ export const ui = {
         keyArtAlt: 'Space Defender key art: a ship races above a planet, chased by two Drones',
       },
       studio: {
-        label: 'Independent studio',
+        label: 'Independent studio · in-house engine',
         name: 'Petit Vaisseau',
         tagline: 'A studio of one, and one ship at a time.',
         body:
-          'The studio behind Space Defender. Its rule: ship small, listen, fix. The studio site hosts the game page, the press kit and the Discord.',
+          'After Space Defender, I build with Claude Code, with me driving (architecture, review, tests). I wrote Ancre, my own C++ 3D engine, and I am making three games on it for 2027: Abysses: Meridian, Pelagia and Telluris.',
         cta: 'Visit the studio site',
       },
       bouygue: {
@@ -438,12 +499,12 @@ export const ui = {
       kicker: 'Skills',
       title: 'Toolbox',
       groups: [
+        { name: 'Agentic AI', items: ['Claude Code', 'AI agents', 'Model Context Protocol (MCP)', 'CLAUDE.md, skills, hooks', 'Review and CI guardrails', 'LLMOps'] },
         { name: 'Cloud & MLOps', items: ['Microsoft Azure', 'Azure Databricks', 'MLOps', 'Data pipelines', 'CI/CD', 'Industrialisation'] },
-        { name: 'Backend', items: ['Python', 'FastAPI', 'Django', 'Django REST Framework', 'REST APIs', 'WebSockets', 'Flask'] },
+        { name: 'Backend', items: ['Python', 'FastAPI', 'Django', 'Django REST Framework', 'REST APIs', 'WebSockets', 'Pytest'] },
         { name: 'Data', items: ['PostgreSQL', 'PostGIS / GeoDjango', 'MySQL / MariaDB', 'SQL', 'EDI (EDIFACT)'] },
-        { name: 'DevOps & tooling', items: ['Docker', 'Docker Compose', 'Linux', 'Nginx', 'Gunicorn', 'Git / GitFlow', 'Sentry', 'Bash'] },
-        { name: 'Front end & games', items: ['JavaScript', 'HTML / CSS', 'Leaflet', 'Unity', 'C#'] },
-        { name: 'Ways of working', items: ['Agile / Kanban', 'Testing (Pytest, Selenium)', 'UML', 'Documentation', 'Client relations'] },
+        { name: 'DevOps & tooling', items: ['Docker', 'Linux', 'Nginx', 'Git / GitFlow', 'Azure DevOps', 'Sentry', 'Bash', 'Agile / Kanban'] },
+        { name: 'Games & front end', items: ['C++ (3D engine)', 'Unity', 'C#', 'JavaScript', 'HTML / CSS', 'Leaflet'] },
       ],
       languagesTitle: 'Languages',
       languages: [
@@ -458,7 +519,7 @@ export const ui = {
     contact: {
       kicker: 'Contact',
       title: 'A contract, a project, a question?',
-      body: 'Email is the easiest way to reach me. I reply personally.',
+      body: 'Email is the easiest way to reach me, in English or French. I reply personally.',
       email: 'Send an email',
       copy: 'Copy address',
       copied: 'Address copied',
@@ -477,18 +538,18 @@ export const ui = {
       back: 'Back to site',
       print: 'Print',
       pdf: 'Download PDF',
-      headline: 'Platform / MLOps Engineer – Azure & Databricks',
-      location: 'Parthenay, France · near Niort',
+      headline: 'Agentic AI & MLOps Engineer – Python, Azure, Claude Code',
+      location: 'France · fully remote',
       profileTitle: 'Profile',
       profile:
-        'Platform and MLOps engineer with 5 years of Python development experience. I industrialise data and AI platforms on Azure and Databricks, with a strong focus on robustness, automation and scaling. Comfortable in large enterprises and international teams alike.',
+        'Agentic AI and MLOps engineer, freelance, fully remote. I ship AI to production and help teams build with AI coding agents (Claude Code, MCP) without lowering the quality bar. Two years industrialising data and AI platforms on Azure and Databricks at Covéa, five years of Python development, in English and French alike.',
       experienceTitle: 'Experience',
       educationTitle: 'Education',
       skillsTitle: 'Skills',
       projectsTitle: 'Side projects',
       projects: [
-        { name: 'Space Defender: Frontier Squadron', url: links.steam, text: 'Video game published on Steam (Unity, C#). Made solo; Early Access in May 2025, version 1.0 in September 2026.' },
-        { name: 'Petit Vaisseau', url: links.studio, text: 'Independent game studio: production, website, press kit, Discord community.' },
+        { name: 'Space Defender: Frontier Squadron', url: links.steam, text: 'Hand-coded video game (Unity, C#). Early Access in May 2025, version 1.0 in September 2026. Over 3,000 copies sold on Steam, 6,000 downloads on iOS and Android.' },
+        { name: 'Petit Vaisseau', url: links.studio, text: 'Independent game studio. Ancre, an in-house C++ 3D engine built with Claude Code under my direction; three games in the works for 2027.' },
         { name: 'La Bouygue', url: links.bouygue, text: 'Django booking and management app for a family holiday house, in production since 2021.' },
       ],
       languagesTitle: 'Languages',

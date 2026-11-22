@@ -3,6 +3,7 @@ import Base from './Base.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
 import About from '../components/About.astro';
+import Offers from '../components/Offers.astro';
 import Experience from '../components/Experience.astro';
 import Projects from '../components/Projects.astro';
 import Skills from '../components/Skills.astro';
@@ -26,7 +27,20 @@ const jsonLd = {
   url: new URL(paths[lang].home, Astro.site).href,
   email: 'mailto:gemacx@gmail.com',
   address: { '@type': 'PostalAddress', addressRegion: 'Nouvelle-Aquitaine', addressCountry: 'FR' },
-  knowsAbout: ['MLOps', 'Microsoft Azure', 'Azure Databricks', 'Python', 'Django', 'FastAPI', 'Unity'],
+  knowsAbout: [
+    'Agentic AI',
+    'Claude Code',
+    'AI agents',
+    'Model Context Protocol',
+    'MLOps',
+    'Microsoft Azure',
+    'Azure Databricks',
+    'Python',
+    'FastAPI',
+    'Django',
+    'C++',
+    'Unity',
+  ],
   sameAs: [
     'https://www.linkedin.com/in/guillaume-merle-8a239a207/',
     'https://github.com/GuillaumeM92',
@@ -42,6 +56,7 @@ const jsonLd = {
   <main id="main">
     <Hero lang={lang} />
     <About lang={lang} />
+    <Offers lang={lang} />
     <Experience lang={lang} />
     <Projects lang={lang} />
     <Skills lang={lang} />

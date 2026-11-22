@@ -1,0 +1,99 @@
+---
+import Icon from './Icon.astro';
+import { ui, type Lang } from '../data/content';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = ui[lang].offers;
+const ids = ui[lang].ids;
+---
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">{t.kicker}</p>
+      <h2 class="section-title">{t.title}</h2>
+    </div>
+
+    <div class="offers">
+      {
+        t.items.map((o, i) => (
+          <article class="card offer reveal" style={`transition-delay:${i * 50}ms`}>
+            <p class="format">
+              <span class="num">{String.fromCharCode(65 + i)}</span>
+              {o.format}
+            </p>
+            <h3>{o.name}</h3>
+            <p class="body">{o.body}</p>
+            <ul class="tags">
+              {o.tags.map((tag) => (
+                <li class="tag">{tag}</li>
+              ))}
+            </ul>
+          </article>
+        ))
+      }
+    </div>
+
+    <div class="cta reveal">
+      <a class="btn btn-primary" href={`#${ids.contact}`}>
+        <Icon name="mail" />
+        {t.cta}
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .offers {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
+    gap: 1rem;
+  }
+
+  .offer {
+    display: grid;
+    gap: 0.9rem;
+    align-content: start;
+    padding: 1.4rem;
+    transition: border-color 0.3s;
+  }
+
+  .offer:hover {
+    border-color: rgb(56 214 224 / 0.35);
+  }
+
+  .format {
+    display: flex;
+    align-items: baseline;
+    gap: 0.65rem;
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .num {
+    color: var(--accent);
+  }
+
+  .offer h3 {
+    font-size: 1.12rem;
+  }
+
+  .body {
+    color: var(--ink-soft);
+  }
+
+  .offer .tag {
+    font-size: 0.84rem;
+  }
+
+  .cta {
+    margin-top: 2rem;
+  }
+</style>
