@@ -128,7 +128,7 @@ export const ui = {
           end: 'août 2024',
           summary: 'Mission pour un casino en ligne licencié : 1 600 heures, avis 5★.',
           bullets: [
-            "Développement d'une API gateway avec FastAPI : paiements, multi-devises, intégrations tierces, OAuth2/JWT, PostgreSQL",
+            "API gateway FastAPI : paiements, multi-devises, OAuth2/JWT, PostgreSQL",
             'Travail quotidien au sein d’une équipe anglophone',
           ],
           tags: ['Python', 'FastAPI', 'PostgreSQL', 'API REST'],
@@ -274,14 +274,14 @@ export const ui = {
       location: 'France · 100 % télétravail',
       profileTitle: 'Profil',
       profile:
-        "Ingénieur IA agentique et MLOps, freelance, 100 % à distance. Je mets de l'IA en production et j'aide les équipes à développer avec des agents IA (Claude Code, MCP) sans perdre en qualité. Deux ans d'industrialisation de plateformes data et IA sur Azure et Databricks chez Covéa, cinq ans de développement Python, en français comme en anglais.",
+        "Je mets de l'IA en production et j'aide les équipes à développer avec des agents IA (Claude Code, MCP) sans perdre en qualité. Deux ans d'industrialisation de plateformes data et IA sur Azure et Databricks chez Covéa, cinq ans de développement Python.",
       experienceTitle: 'Expérience',
       educationTitle: 'Formation',
       skillsTitle: 'Compétences',
       projectsTitle: 'Projets personnels',
       projects: [
-        { name: 'Space Defender: Frontier Squadron', url: links.steam, text: 'Jeu vidéo codé à la main (Unity, C#). Accès anticipé en mai 2025, 1.0 en septembre 2026. Plus de 3 000 exemplaires vendus sur Steam, 6 000 téléchargements sur iOS et Android.' },
-        { name: 'Petit Vaisseau', url: links.studio, text: 'Studio de jeu vidéo indépendant. Ancre, moteur 3D maison en C++ développé avec Claude Code sous mon pilotage ; trois jeux en préparation pour 2027.' },
+        { name: 'Space Defender: Frontier Squadron', url: links.steam, text: 'Jeu codé à la main (Unity, C#), 1.0 en septembre 2026. Plus de 3 000 exemplaires vendus sur Steam, 6 000 téléchargements sur mobile.' },
+        { name: 'Petit Vaisseau', url: links.studio, text: 'Studio indépendant. Ancre, moteur 3D maison en C++ développé avec Claude Code ; trois jeux en préparation pour 2027.' },
         { name: 'La Bouygue', url: links.bouygue, text: 'Application Django de réservation et de gestion pour une maison familiale, en production depuis 2021.' },
       ],
       languagesTitle: 'Langues',
@@ -396,7 +396,7 @@ export const ui = {
           end: 'Aug 2024',
           summary: 'Contract for a licensed online casino: 1,600 hours, 5★ review.',
           bullets: [
-            'Built an API gateway with FastAPI: payments, multi-currency, third-party integrations, OAuth2/JWT, PostgreSQL',
+            'FastAPI API gateway: payments, multi-currency, OAuth2/JWT, PostgreSQL',
             'Worked daily within an English-speaking team',
           ],
           tags: ['Python', 'FastAPI', 'PostgreSQL', 'REST APIs'],
@@ -542,14 +542,14 @@ export const ui = {
       location: 'France · fully remote',
       profileTitle: 'Profile',
       profile:
-        'Agentic AI and MLOps engineer, freelance, fully remote. I ship AI to production and help teams build with AI coding agents (Claude Code, MCP) without lowering the quality bar. Two years industrialising data and AI platforms on Azure and Databricks at Covéa, five years of Python development, in English and French alike.',
+        'I ship AI to production and help teams build with AI coding agents (Claude Code, MCP) without lowering the quality bar. Two years industrialising data and AI platforms on Azure and Databricks at Covéa, five years of Python development.',
       experienceTitle: 'Experience',
       educationTitle: 'Education',
       skillsTitle: 'Skills',
       projectsTitle: 'Side projects',
       projects: [
-        { name: 'Space Defender: Frontier Squadron', url: links.steam, text: 'Hand-coded video game (Unity, C#). Early Access in May 2025, version 1.0 in September 2026. Over 3,000 copies sold on Steam, 6,000 downloads on iOS and Android.' },
-        { name: 'Petit Vaisseau', url: links.studio, text: 'Independent game studio. Ancre, an in-house C++ 3D engine built with Claude Code under my direction; three games in the works for 2027.' },
+        { name: 'Space Defender: Frontier Squadron', url: links.steam, text: 'Hand-coded game (Unity, C#), 1.0 in September 2026. Over 3,000 copies sold on Steam, 6,000 mobile downloads.' },
+        { name: 'Petit Vaisseau', url: links.studio, text: 'Indie studio. Ancre, an in-house C++ 3D engine built with Claude Code; three games in the works for 2027.' },
         { name: 'La Bouygue', url: links.bouygue, text: 'Django booking and management app for a family holiday house, in production since 2021.' },
       ],
       languagesTitle: 'Languages',
