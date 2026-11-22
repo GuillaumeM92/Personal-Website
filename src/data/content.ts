@@ -125,7 +125,7 @@ export const ui = {
           kind: 'Mission via Upwork',
           place: 'À distance',
           start: 'juil. 2023',
-          end: 'nov. 2024',
+          end: 'août 2024',
           summary: 'Mission pour un casino en ligne licencié : 1 600 heures, avis 5★.',
           bullets: [
             "Développement d'une API gateway avec FastAPI : paiements, multi-devises, intégrations tierces, OAuth2/JWT, PostgreSQL",
@@ -393,7 +393,7 @@ export const ui = {
           kind: 'Contract via Upwork',
           place: 'Remote',
           start: 'Jul 2023',
-          end: 'Nov 2024',
+          end: 'Aug 2024',
           summary: 'Contract for a licensed online casino: 1,600 hours, 5★ review.',
           bullets: [
             'Built an API gateway with FastAPI: payments, multi-currency, third-party integrations, OAuth2/JWT, PostgreSQL',
